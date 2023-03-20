@@ -6,43 +6,40 @@ from odoo.exceptions import ValidationError
 
 
 class ReturnPicking(models.TransientModel):
-    _inherit = "stock.return.picking"
+    _inherit = 'stock.return.picking'
 
-    create_rma = fields.Boolean(string="Create RMAs")
-    picking_type_code = fields.Selection(related="picking_id.picking_type_id.code")
+    create_rma = fields.Boolean(
+        string="Create RMAs"
+    )
+    picking_type_code = fields.Selection(
+        selection=[
+            ('incoming', 'Vendors'),
+            ('outgoing', 'Customers'),
+            ('internal', 'Internal'),
+        ],
+        related='picking_id.picking_type_id.code',
+        store=True,
+        readonly=True,
+    )
 
     @api.onchange("create_rma")
     def _onchange_create_rma(self):
         if self.create_rma:
             warehouse = self.picking_id.picking_type_id.warehouse_id
             self.location_id = warehouse.rma_loc_id.id
-            rma_loc = warehouse.search(
-                [("company_id", "=", self.picking_id.company_id.id)]
-            ).mapped("rma_loc_id")
-            rma_loc_domain = [("id", "child_of", rma_loc.ids)]
+            rma_loc = warehouse.search([]).mapped('rma_loc_id')
+            rma_loc_domain = [('id', 'child_of', rma_loc.ids)]
         else:
-            # If self.create_rma is not True, the value of the location and
-            # the location domain will be the same as assigned by default.
-            location_id = self.picking_id.location_id.id
-            return_picking_type = self.picking_id.picking_type_id.return_picking_type_id
-            if return_picking_type.default_location_dest_id.return_location:
-                location_id = return_picking_type.default_location_dest_id.id
-            self.location_id = location_id
+            self.location_id = self.default_get(['location_id'])['location_id']
             rma_loc_domain = [
-                "|",
-                ("id", "=", self.picking_id.location_id.id),
-                "|",
-                "&",
-                ("return_location", "=", True),
-                ("company_id", "=", False),
-                "&",
-                ("return_location", "=", True),
-                ("company_id", "=", self.picking_id.company_id.id),
+                '|',
+                ('id', '=', self.picking_id.location_id.id),
+                ('return_location', '=', True),
             ]
-        return {"domain": {"location_id": rma_loc_domain}}
+        return {'domain': {'location_id': rma_loc_domain}}
 
     def create_returns(self):
-        """Override create_returns method for creating one or more
+        """ Override create_returns method for creating one or more
         'confirmed' RMAs after return a delivery picking in case
         'Create RMAs' checkbox is checked in this wizard.
         New RMAs will be linked to the delivery picking as the origin
@@ -55,18 +52,13 @@ class ReturnPicking(models.TransientModel):
             self_with_context = self.with_context(set_rma_picking_type=True)
             res = super(ReturnPicking, self_with_context).create_returns()
             if not self.picking_id.partner_id:
-                raise ValidationError(
-                    _(
-                        "You must specify the 'Customer' in the "
-                        "'Stock Picking' from which RMAs will be created"
-                    )
-                )
-            returned_picking = self.env["stock.picking"].browse(res["res_id"])
-            vals_list = [
-                move._prepare_return_rma_vals(self.picking_id)
-                for move in returned_picking.move_lines
-            ]
-            self.env["rma"].create(vals_list)
+                raise ValidationError(_(
+                    "You must specify the 'Customer' in the "
+                    "'Stock Picking' from which RMAs will be created"))
+            returned_picking = self.env['stock.picking'].browse(res['res_id'])
+            vals_list = [move._prepare_return_rma_vals(self.picking_id)
+                         for move in returned_picking.move_lines]
+            self.env['rma'].create(vals_list)
             return res
         else:
             return super().create_returns()

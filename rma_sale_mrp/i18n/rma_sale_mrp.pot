@@ -1,12 +1,12 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* rma_sale_mrp
+#	* rma_sale_mrp
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: \n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,23 +15,17 @@ msgstr ""
 
 #. module: rma_sale_mrp
 #: model_terms:ir.ui.view,arch_db:rma_sale_mrp.portal_rma_page
-msgid ""
-"<span class=\"badge badge-danger label-text-align\"><i class=\"fa fa-fw fa-"
-"times\"/> Cancelled</span>"
+msgid "<span class=\"badge badge-danger label-text-align\"><i class=\"fa fa-fw fa-times\"/> Cancelled</span>"
 msgstr ""
 
 #. module: rma_sale_mrp
 #: model_terms:ir.ui.view,arch_db:rma_sale_mrp.portal_rma_page
-msgid ""
-"<span class=\"badge badge-info label-text-align\"><i class=\"fa fa-fw fa-"
-"clock-o\"/> Draft</span>"
+msgid "<span class=\"badge badge-info label-text-align\"><i class=\"fa fa-fw fa-clock-o\"/> Draft</span>"
 msgstr ""
 
 #. module: rma_sale_mrp
 #: model_terms:ir.ui.view,arch_db:rma_sale_mrp.portal_rma_page
-msgid ""
-"<span class=\"badge badge-warning label-text-align\"><i class=\"fa fa-fw fa-"
-"clock-o\"/> Waiting</span>"
+msgid "<span class=\"badge badge-warning label-text-align\"><i class=\"fa fa-fw fa-clock-o\"/> Waiting</span>"
 msgstr ""
 
 #. module: rma_sale_mrp
@@ -107,9 +101,7 @@ msgstr ""
 
 #. module: rma_sale_mrp
 #: model:ir.model.fields,help:rma_sale_mrp.field_sale_order_line_rma_wizard_component__uom_category_id
-msgid ""
-"Conversion between Units of Measure can only occur if they belong to the "
-"same category. The conversion will be made based on the ratios."
+msgid "Conversion between Units of Measure can only occur if they belong to the same category. The conversion will be made based on the ratios."
 msgstr ""
 
 #. module: rma_sale_mrp
@@ -133,30 +125,18 @@ msgid "Description"
 msgstr ""
 
 #. module: rma_sale_mrp
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_account_move__display_name
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_rma__display_name
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_sale_order__display_name
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_sale_order_line__display_name
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_sale_order_line_rma_wizard__display_name
 #: model:ir.model.fields,field_description:rma_sale_mrp.field_sale_order_line_rma_wizard_component__display_name
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_sale_order_rma_wizard__display_name
 msgid "Display Name"
 msgstr ""
 
 #. module: rma_sale_mrp
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_account_move__id
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_rma__id
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_sale_order__id
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_sale_order_line__id
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_sale_order_line_rma_wizard__id
 #: model:ir.model.fields,field_description:rma_sale_mrp.field_sale_order_line_rma_wizard_component__id
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_sale_order_rma_wizard__id
 msgid "ID"
 msgstr ""
 
 #. module: rma_sale_mrp
-#: model:ir.model,name:rma_sale_mrp.model_account_move
-msgid "Journal Entry"
+#: model:ir.model,name:rma_sale_mrp.model_account_invoice
+msgid "Invoice"
 msgstr ""
 
 #. module: rma_sale_mrp
@@ -176,13 +156,7 @@ msgid "Kit quantity"
 msgstr ""
 
 #. module: rma_sale_mrp
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_account_move____last_update
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_rma____last_update
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_sale_order____last_update
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_sale_order_line____last_update
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_sale_order_line_rma_wizard____last_update
 #: model:ir.model.fields,field_description:rma_sale_mrp.field_sale_order_line_rma_wizard_component____last_update
-#: model:ir.model.fields,field_description:rma_sale_mrp.field_sale_order_rma_wizard____last_update
 msgid "Last Modified on"
 msgstr ""
 
@@ -260,6 +234,11 @@ msgid "Sale Line"
 msgstr ""
 
 #. module: rma_sale_mrp
+#: model:ir.model,name:rma_sale_mrp.model_sale_order
+msgid "Sale Order"
+msgstr ""
+
+#. module: rma_sale_mrp
 #: model:ir.model,name:rma_sale_mrp.model_sale_order_line_rma_wizard
 msgid "Sale Order Line Rma Wizard"
 msgstr ""
@@ -270,36 +249,19 @@ msgid "Sale Order Rma Wizard"
 msgstr ""
 
 #. module: rma_sale_mrp
-#: model:ir.model,name:rma_sale_mrp.model_sale_order
-msgid "Sales Order"
-msgstr ""
-
-#. module: rma_sale_mrp
 #: model:ir.model,name:rma_sale_mrp.model_sale_order_line
 msgid "Sales Order Line"
 msgstr ""
 
 #. module: rma_sale_mrp
-#: code:addons/rma_sale_mrp/wizard/sale_order_rma_wizard.py:0
+#: code:addons/rma_sale_mrp/wizard/sale_order_rma_wizard.py:55
 #, python-format
-msgid ""
-"The kit corresponding to the product %s can't be put in the RMA. Either all "
-"or some of the components where already put in another RMA"
-msgstr ""
-
-#. module: rma_sale_mrp
-#: code:addons/rma_sale_mrp/models/rma.py:0
-#, python-format
-msgid ""
-"To avoid kit quantities inconsistencies it is not possible to convert to "
-"draft a cancelled RMA. You should do a new one from the sales order."
+msgid "The kit corresponding to the product %s can't be put in the RMA. Either all or some of the components where already put in another RMA"
 msgstr ""
 
 #. module: rma_sale_mrp
 #: model:ir.model.fields,help:rma_sale_mrp.field_rma__kit_qty
-msgid ""
-"To how many kits this components corresponds to. Used mainly for refunding "
-"the right quantity"
+msgid "To how many kits this components corresponds to. Used mainly for refunding the right quantity"
 msgstr ""
 
 #. module: rma_sale_mrp
@@ -324,7 +286,8 @@ msgid "Wizard"
 msgstr ""
 
 #. module: rma_sale_mrp
-#: code:addons/rma_sale_mrp/models/rma.py:0
+#: code:addons/rma_sale_mrp/models/rma.py:49
 #, python-format
 msgid "You can't refund a kit in wich some RMAs aren't received"
 msgstr ""
+

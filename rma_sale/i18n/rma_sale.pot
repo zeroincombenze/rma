@@ -1,12 +1,12 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* rma_sale
+#	* rma_sale
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: \n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14,19 +14,19 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: rma_sale
-#: code:addons/rma_sale/controllers/sale_portal.py:0
+#: code:addons/rma_sale/controllers/sale_portal.py:57
 #, python-format
 msgid " (Portal)"
 msgstr ""
 
 #. module: rma_sale
-#: code:addons/rma_sale/wizard/sale_order_rma_wizard.py:0
+#: code:addons/rma_sale/wizard/sale_order_rma_wizard.py:55
 #, python-format
 msgid " has been created."
 msgstr ""
 
 #. module: rma_sale
-#: code:addons/rma_sale/wizard/sale_order_rma_wizard.py:0
+#: code:addons/rma_sale/wizard/sale_order_rma_wizard.py:57
 #, python-format
 msgid " have been created."
 msgstr ""
@@ -58,9 +58,7 @@ msgstr ""
 
 #. module: rma_sale
 #: model_terms:ir.ui.view,arch_db:rma_sale.res_config_settings_view_form
-msgid ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" groups=\"base.group_multi_company\"/>"
+msgid "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" groups=\"base.group_multi_company\"/>"
 msgstr ""
 
 #. module: rma_sale
@@ -132,9 +130,7 @@ msgstr ""
 
 #. module: rma_sale
 #: model_terms:ir.ui.view,arch_db:rma_sale.sale_rma_request_form
-msgid ""
-"Comment anything relevant to the return, like serial numbers, a description "
-"of the issue, etc"
+msgid "Comment anything relevant to the return, like serial numbers, a description of the issue, etc"
 msgstr ""
 
 #. module: rma_sale
@@ -154,13 +150,11 @@ msgstr ""
 
 #. module: rma_sale
 #: model:ir.model.fields,help:rma_sale.field_sale_order_line_rma_wizard__uom_category_id
-msgid ""
-"Conversion between Units of Measure can only occur if they belong to the "
-"same category. The conversion will be made based on the ratios."
+msgid "Conversion between Units of Measure can only occur if they belong to the same category. The conversion will be made based on the ratios."
 msgstr ""
 
 #. module: rma_sale
-#: code:addons/rma_sale/models/sale.py:0
+#: code:addons/rma_sale/models/sale.py:55
 #: model_terms:ir.ui.view,arch_db:rma_sale.view_order_form
 #, python-format
 msgid "Create RMA"
@@ -204,23 +198,15 @@ msgid "Description"
 msgstr ""
 
 #. module: rma_sale
-#: model:ir.model.fields,field_description:rma_sale.field_res_company__display_name
-#: model:ir.model.fields,field_description:rma_sale.field_res_config_settings__display_name
-#: model:ir.model.fields,field_description:rma_sale.field_rma__display_name
-#: model:ir.model.fields,field_description:rma_sale.field_sale_order__display_name
-#: model:ir.model.fields,field_description:rma_sale.field_sale_order_line__display_name
 #: model:ir.model.fields,field_description:rma_sale.field_sale_order_line_rma_wizard__display_name
 #: model:ir.model.fields,field_description:rma_sale.field_sale_order_rma_wizard__display_name
-#: model:ir.model.fields,field_description:rma_sale.field_stock_move__display_name
 msgid "Display Name"
 msgstr ""
 
 #. module: rma_sale
 #: model:ir.model.fields,help:rma_sale.field_res_company__show_full_page_sale_rma
 #: model:ir.model.fields,help:rma_sale.field_res_config_settings__show_full_page_sale_rma
-msgid ""
-"From the frontend sale order page go to a single RMA page creation instead "
-"of the usual popup"
+msgid "From the frontend sale order page go to a single RMA page creation instead of the usual popup"
 msgstr ""
 
 #. module: rma_sale
@@ -230,14 +216,8 @@ msgid "Full page RMA creation"
 msgstr ""
 
 #. module: rma_sale
-#: model:ir.model.fields,field_description:rma_sale.field_res_company__id
-#: model:ir.model.fields,field_description:rma_sale.field_res_config_settings__id
-#: model:ir.model.fields,field_description:rma_sale.field_rma__id
-#: model:ir.model.fields,field_description:rma_sale.field_sale_order__id
-#: model:ir.model.fields,field_description:rma_sale.field_sale_order_line__id
 #: model:ir.model.fields,field_description:rma_sale.field_sale_order_line_rma_wizard__id
 #: model:ir.model.fields,field_description:rma_sale.field_sale_order_rma_wizard__id
-#: model:ir.model.fields,field_description:rma_sale.field_stock_move__id
 msgid "ID"
 msgstr ""
 
@@ -247,14 +227,8 @@ msgid "If no requested operation is set, the RMA won't be correctly fulfilled"
 msgstr ""
 
 #. module: rma_sale
-#: model:ir.model.fields,field_description:rma_sale.field_res_company____last_update
-#: model:ir.model.fields,field_description:rma_sale.field_res_config_settings____last_update
-#: model:ir.model.fields,field_description:rma_sale.field_rma____last_update
-#: model:ir.model.fields,field_description:rma_sale.field_sale_order____last_update
-#: model:ir.model.fields,field_description:rma_sale.field_sale_order_line____last_update
 #: model:ir.model.fields,field_description:rma_sale.field_sale_order_line_rma_wizard____last_update
 #: model:ir.model.fields,field_description:rma_sale.field_sale_order_rma_wizard____last_update
-#: model:ir.model.fields,field_description:rma_sale.field_stock_move____last_update
 msgid "Last Modified on"
 msgstr ""
 
@@ -353,6 +327,7 @@ msgid "Sale Line"
 msgstr ""
 
 #. module: rma_sale
+#: model:ir.model,name:rma_sale.model_sale_order
 #: model:ir.model.fields,field_description:rma_sale.field_rma__order_id
 msgid "Sale Order"
 msgstr ""
@@ -365,11 +340,6 @@ msgstr ""
 #. module: rma_sale
 #: model:ir.model,name:rma_sale.model_sale_order_rma_wizard
 msgid "Sale Order Rma Wizard"
-msgstr ""
-
-#. module: rma_sale
-#: model:ir.model,name:rma_sale.model_sale_order
-msgid "Sales Order"
 msgstr ""
 
 #. module: rma_sale
@@ -414,9 +384,7 @@ msgstr ""
 
 #. module: rma_sale
 #: model_terms:ir.ui.view,arch_db:rma_sale.sale_rma_request_form
-msgid ""
-"Use the comment button to add relevant information regarding the RMA, like "
-"returned serial numbers or a description of the issue"
+msgid "Use the comment button to add relevant information regarding the RMA, like returned serial numbers or a description of the issue"
 msgstr ""
 
 #. module: rma_sale
@@ -426,9 +394,7 @@ msgstr ""
 
 #. module: rma_sale
 #: model_terms:ir.ui.view,arch_db:rma_sale.res_config_settings_view_form
-msgid ""
-"When we hit the RMA request button from the portal sale page, open in a "
-"single page instead of a popup."
+msgid "When we hit the RMA request button from the portal sale page, open in a single page instead of a popup."
 msgstr ""
 
 #. module: rma_sale
@@ -443,8 +409,7 @@ msgstr ""
 
 #. module: rma_sale
 #: model_terms:ir.ui.view,arch_db:rma_sale.sale_rma_request_form
-msgid ""
-"You can only return as much product units as you received for this order"
+msgid "You can only return as much product units as you received for this order"
 msgstr ""
 
 #. module: rma_sale
@@ -453,14 +418,13 @@ msgid "You can send a message in every RMA sent"
 msgstr ""
 
 #. module: rma_sale
-#: code:addons/rma_sale/models/sale.py:0
+#: code:addons/rma_sale/models/sale.py:44
 #, python-format
 msgid "You may only create RMAs from a confirmed or done sale order."
 msgstr ""
 
 #. module: rma_sale
 #: model_terms:ir.ui.view,arch_db:rma_sale.sale_rma_request_form
-msgid ""
-"You're about to perform an RMA request. Our team will process it an will "
-"reach you once it's validated. Keep in mind that:"
+msgid "You're about to perform an RMA request. Our team will process it an will reach you once it's validated. Keep in mind that:"
 msgstr ""
+

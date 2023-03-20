@@ -1,15 +1,16 @@
-# Copyright 2016 Cyril Gaudin (Camptocamp)
-# Copyright 2015 Vauxoo, Yanina Aular
+# © 2016 Cyril Gaudin (Camptocamp)
+# © 2015 Vauxoo, Yanina Aular
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests.common import TransactionCase
 
 
 class TestProductWarranty(TransactionCase):
+
     def setUp(self):
         super(TestProductWarranty, self).setUp()
-        self.instruction_model = self.env["return.instruction"]
-        self.supplierinfo = self.env["product.supplierinfo"]
+        self.instruction_model = self.env['return.instruction']
+        self.supplierinfo = self.env['product.supplierinfo']
         self.create_product_supplierinfo()
 
     def create_product_supplierinfo(self):
@@ -17,17 +18,17 @@ class TestProductWarranty(TransactionCase):
         Create a record of product.supplier for next tests
         """
 
-        product_tmpl_id = self.env.ref("product.product_product_3")
+        product_tmpl_id = self.env.ref('product.product_product_3')
 
-        partner_id = self.env.ref("base.res_partner_4")
-        other_partner = self.env.ref("base.res_partner_12")
+        partner_id = self.env.ref('base.res_partner_4')
+        other_partner = self.env.ref('base.res_partner_12')
 
         supplierinfo_data = dict(
             name=partner_id.id,
-            product_name="Test SupplierInfo for display Default Instruction",
+            product_name='Test SupplierInfo for display Default Instruction',
             min_qty=4,
             delay=5,
-            warranty_return_partner="supplier",
+            warranty_return_partner='supplier',
             product_tmpl_id=product_tmpl_id.id,
             warranty_return_other_address=other_partner.id,
         )
@@ -42,13 +43,11 @@ class TestProductWarranty(TransactionCase):
         product.supplierinfo is created
         """
 
-        return_instructions_id = self.env.ref(
-            "product_warranty." "return_instruction_1"
-        )
+        return_instructions_id = self.env.ref('product_warranty.'
+                                              'return_instruction_1')
 
-        self.assertEqual(
-            self.supplierinfo_brw.return_instructions.id, return_instructions_id.id
-        )
+        self.assertEquals(self.supplierinfo_brw.return_instructions.id,
+                          return_instructions_id.id)
 
     def test_warranty_return_address(self):
         """
@@ -57,21 +56,18 @@ class TestProductWarranty(TransactionCase):
         """
         self.create_product_supplierinfo()
 
-        self.assertEqual(
+        self.assertEquals(self.supplierinfo_brw.warranty_return_address.id,
+                          self.supplierinfo_brw.name.id)
+
+        self.supplierinfo_brw.write({'warranty_return_partner': 'company'})
+
+        self.assertEquals(self.supplierinfo_brw.warranty_return_address.id,
+                          self.supplierinfo_brw.company_id.
+                          crm_return_address_id.id)
+
+        self.supplierinfo_brw.write({'warranty_return_partner': 'other'})
+
+        self.assertEquals(
             self.supplierinfo_brw.warranty_return_address.id,
-            self.supplierinfo_brw.name.id,
-        )
-
-        self.supplierinfo_brw.write({"warranty_return_partner": "company"})
-
-        self.assertEqual(
-            self.supplierinfo_brw.warranty_return_address.id,
-            self.supplierinfo_brw.company_id.crm_return_address_id.id,
-        )
-
-        self.supplierinfo_brw.write({"warranty_return_partner": "other"})
-
-        self.assertEqual(
-            self.supplierinfo_brw.warranty_return_address.id,
-            self.supplierinfo_brw.warranty_return_other_address.id,
+            self.supplierinfo_brw.warranty_return_other_address.id
         )

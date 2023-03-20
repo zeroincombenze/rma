@@ -9,5 +9,5 @@ class ResCompany(models.Model):
     show_full_page_sale_rma = fields.Boolean(
         string="Full page RMA creation",
         help="From the frontend sale order page go to a single RMA page "
-        "creation instead of the usual popup",
+             "creation instead of the usual popup",
     )

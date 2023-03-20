@@ -3,16 +3,18 @@
 {
     "name": "Return Merchandise Authorization Management - Link with MRP Kits",
     "summary": "Allow doing RMAs from MRP kits",
-    "version": "14.0.1.0.1",
+    "version": "12.0.1.2.1",
     "development_status": "Beta",
     "category": "RMA",
     "website": "https://github.com/OCA/rma",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "maintainers": ["chienandalu"],
     "license": "AGPL-3",
-    "depends": ["rma_sale", "mrp"],
+    "depends": [
+        "rma_sale",
+        "mrp",
+    ],
     "data": [
-        "security/ir.model.access.csv",
         "views/sale_order_portal_template.xml",
         "views/rma_views.xml",
         "views/report_rma.xml",

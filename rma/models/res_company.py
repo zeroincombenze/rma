@@ -1,7 +1,7 @@
 # Copyright 2020 Tecnativa - Ernesto Tejeda
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models, _
 
 
 class Company(models.Model):
@@ -25,19 +25,15 @@ class Company(models.Model):
         except ValueError:
             return False
 
-    rma_return_grouping = fields.Boolean(
-        string="Group RMA returns by customer address and warehouse",
-        default=True,
-    )
     send_rma_confirmation = fields.Boolean(
         string="Send RMA Confirmation",
         help="When the delivery is confirmed, send a confirmation email "
-        "to the customer.",
+             "to the customer.",
     )
     send_rma_receipt_confirmation = fields.Boolean(
         string="Send RMA Receipt Confirmation",
         help="When the RMA receipt is confirmed, send a confirmation email "
-        "to the customer.",
+             "to the customer.",
     )
     send_rma_draft_confirmation = fields.Boolean(
         string="Send RMA draft Confirmation",
@@ -62,7 +58,8 @@ class Company(models.Model):
         string="Email Template draft notification for RMA",
         domain="[('model', '=', 'rma')]",
         default=_default_rma_mail_draft_template,
-        help="Email sent to the customer when they place " "an RMA from the portal",
+        help="Email sent to the customer when they place "
+             "an RMA from the portal",
     )
 
     @api.model
@@ -72,16 +69,10 @@ class Company(models.Model):
         return company
 
     def create_rma_index(self):
-        return (
-            self.env["ir.sequence"]
-            .sudo()
-            .create(
-                {
-                    "name": _("RMA Code"),
-                    "prefix": "RMA",
-                    "code": "rma",
-                    "padding": 4,
-                    "company_id": self.id,
-                }
-            )
-        )
+        return self.env['ir.sequence'].sudo().create({
+            'name': _('RMA Code'),
+            'prefix': 'RMA',
+            'code': 'rma',
+            'padding': 4,
+            'company_id': self.id,
+        })

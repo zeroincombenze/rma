@@ -14,13 +14,13 @@ Return Merchandise Authorization Management
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Frma-lightgray.png?logo=github
-    :target: https://github.com/OCA/rma/tree/14.0/rma
+    :target: https://github.com/OCA/rma/tree/12.0/rma
     :alt: OCA/rma
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/rma-14-0/rma-14-0-rma
+    :target: https://translation.odoo-community.org/projects/rma-12-0/rma-12-0-rma
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
-    :target: https://runbot.odoo-community.org/runbot/145/14.0
+    :target: https://runbot.odoo-community.org/runbot/145/12.0
     :alt: Try me on Runbot
 
 |badge1| |badge2| |badge3| |badge4| |badge5| 
@@ -51,19 +51,6 @@ If you want RMAs to be created from incoming emails, you need to:
    one.
 #. Go to 'Email' tab and set an 'Email Alias'.
 
-If you want to manually finish RMAs, you need to:
-
-#. Go to *Settings > Inventory*.
-#. Set *Finish RMAs manually* checkbox on.
-
-By default, returns to customer are grouped by shipping address, warehouse and company.
-If you want to avoid this grouping you can:
-
-#. Go to *Settings > Inventory*.
-#. Set *Group RMA returns by customer address and warehouse* checkbox off.
-
-The users will still be able to group those pickings from the wizard.
-
 Usage
 =====
 
@@ -92,11 +79,6 @@ To use this module, you need to:
      The RMA will be set automatically to 'Replaced' or 'Returned' state when
      the RMA quantity is equal or lower than the quantity in done delivery
      orders linked to it.
-#. You can also finish the RMA without further ado. To do so click on the *Finish*
-   button. A wizard will ask you for the reason from a selection of preconfigured ones.
-   Be sure to configure them in advance on *RMA > Configuration > Finalization Reasons*.
-   Once the RMA is finished, it will be set to that state and the reason will be
-   registered.
 
 An RMA can also be created from a return of a delivery order:
 
@@ -138,7 +120,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/rma/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/rma/issues/new?body=module:%20rma%0Aversion:%2014.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/rma/issues/new?body=module:%20rma%0Aversion:%2012.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -158,9 +140,6 @@ Contributors
   * Ernesto Tejeda
   * Pedro M. Baeza
   * David Vidal
-
-* Chafique Delli <chafique.delli@akretion.com>
-* Giovanni Serra - Ooops <giovanni@ooops404.com>
 
 Maintainers
 ~~~~~~~~~~~
@@ -183,6 +162,6 @@ Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-ernestotejeda| 
 
-This module is part of the `OCA/rma <https://github.com/OCA/rma/tree/14.0/rma>`_ project on GitHub.
+This module is part of the `OCA/rma <https://github.com/OCA/rma/tree/12.0/rma>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
