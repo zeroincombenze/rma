@@ -1,11 +1,11 @@
 
-===============================================================================
-|icon| Return Merchandise Authorization Management - Link with Sales 12.0.1.8.0
-===============================================================================
+=======================================================
+|icon| On Consignment and for Evaluation RMA 12.0.0.1.0
+=======================================================
 
 **Sale Order - Return Merchandise Authorization (RMA)**
 
-.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/rma/12.0/rma_sale/static/description/icon.png
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/rma/12.0/rma_consignment_evaluation/static/description/icon.png
 
 
 .. contents::
@@ -110,7 +110,7 @@ From UI: go to:
 
 * |menu| Setting > Activate Developer mode
 * |menu| Apps > Update Apps List
-* |menu| Setting > Apps |right_do| Select **rma_sale** > Install
+* |menu| Setting > Apps |right_do| Select **rma_consignment_evaluation** > Install
 
 
 |
@@ -143,7 +143,7 @@ From UI: go to:
 
 * |menu| Setting > Activate Developer mode
 * |menu| Apps > Update Apps List
-* |menu| Setting > Apps |right_do| Select **rma_sale** > Update
+* |menu| Setting > Apps |right_do| Select **rma_consignment_evaluation** > Update
 
 
 |
@@ -180,7 +180,7 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History / Cronologia modifiche
 ----------------------------------------
 
-12.0.0.1.0 (2018-10-04)
+12.0.0.1.0 (2023-10-12)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * Initial implementation
@@ -203,8 +203,7 @@ Odoo is a trademark of `Odoo S.A. <https://www.odoo.com/>`__ (formerly OpenERP)
 Authors / Autori
 ----------------
 
-* `Antonio M. Vigliotti <False>`__
-* `SHS-AV s.r.l. <https://www.zeroincombenze.it>`__
+* SHS-AV s.r.l. <https://www.zeroincombenze.it>
 
 Contributors / Contributi da
 ----------------------------

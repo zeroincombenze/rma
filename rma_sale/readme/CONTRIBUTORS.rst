@@ -1,5 +1,3 @@
-* `Tecnativa <https://www.tecnativa.com>`_:
-
-  * Ernesto Tejeda
-  * Pedro M. Baeza
-  * David Vidal
+* Ernesto Tejeda <False>
+* Pedro M. Baeza <False>
+* David Vidal <False>
