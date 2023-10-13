@@ -4,7 +4,7 @@
     "version": "12.0.0.1.0",
     "category": "RMA",
     "summary": "Sale Order - Return Merchandise Authorization (RMA)",
-    "author": "SHS-AV s.r.l.",
+    "author": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
     "website": "https://www.zeroincombenze.it/crm",
     "development_status": "Beta",
     "license": "AGPL-3",
