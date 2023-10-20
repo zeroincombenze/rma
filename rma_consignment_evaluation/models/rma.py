@@ -40,6 +40,9 @@ class Rma(models.Model):
     product_id = fields.Many2one(
         domain="[('id', 'in', allowed_product_ids)]",
     )
+    lot_id = fields.Many2one(
+        'stock.production.lot', 'Lot',
+    )
 
     @api.depends('partner_id', 'order_id')
     def _compute_allowed_picking_ids(self):
@@ -83,6 +86,12 @@ class Rma(models.Model):
     @api.onchange('order_id')
     def _onchange_order_id(self):
         self.product_id = self.picking_id = False
+
+    @api.onchange('product_id')
+    def _onchange_product_id_set_lot_domain(self):
+        return {
+            'domain': {'lot_id': [('product_id', '=', self.product_id.id)]}
+        }
 
     def _prepare_refund(self, invoice_form, origin):
         """Inject salesman from sales order (if any)"""

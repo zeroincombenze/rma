@@ -48,7 +48,8 @@ class SaleOrder(models.Model):
             for data in self.get_delivery_rma_data()]
         wizard = wizard_obj.with_context(active_id=self.id).create({
             'line_ids': line_vals,
-            'location_id': self.warehouse_id.rma_loc_id.id
+            # 'location_id': self.warehouse_id.rma_loc_id.id
+            'location_id': self.env.ref("stock.stock_location_stock").id
         })
         return {
             'name': _('Create RMA'),

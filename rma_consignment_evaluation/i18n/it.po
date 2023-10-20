@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo (12.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-12 19:05+0000\n"
-"PO-Revision-Date: 2023-10-12 19:05+0000\n"
+"POT-Creation-Date: 2023-10-18 16:08+0000\n"
+"PO-Revision-Date: 2023-10-18 16:08+0000\n"
 "Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
 "Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
 "Language: it\n"
@@ -17,22 +17,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: rma_consignment_evaluation
-#: code:addons/rma_consignment_evaluation/controllers/sale_portal.py:56
+#: code:addons/rma_consignment_evaluation/controllers/sale_portal.py:57
 #, python-format
 msgid " (Portal)"
 msgstr " (Portale)"
 
 #. module: rma_consignment_evaluation
-#: code:addons/rma_consignment_evaluation/wizard/sale_order_rma_wizard.py:54
+#: code:addons/rma_consignment_evaluation/wizard/sale_order_rma_wizard.py:55
 #, python-format
 msgid " has been created."
-msgstr " has been creato."
+msgstr " è stato creato."
 
 #. module: rma_consignment_evaluation
-#: code:addons/rma_consignment_evaluation/wizard/sale_order_rma_wizard.py:56
+#: code:addons/rma_consignment_evaluation/wizard/sale_order_rma_wizard.py:57
 #, python-format
 msgid " have been created."
-msgstr " have been creato."
+msgstr " sono stati creati."
 
 #. module: rma_consignment_evaluation
 #: model_terms:ir.ui.view,arch_db:rma_consignment_evaluation.sale_rma_request_form
@@ -67,7 +67,7 @@ msgstr "<span class=\"fa fa-lg fa-building-o\" title=\"I valori impostati qui so
 #. module: rma_consignment_evaluation
 #: model_terms:ir.ui.view,arch_db:rma_consignment_evaluation.sale_order_portal_content
 msgid "<span class=\"fa fa-reply\" role=\"img\" aria-label=\"RMA\" title=\"RMA\"/>"
-msgstr "<span class=\"fa fa-reply\" role=\"img\" aria-label=\"RMA\" title=\"RMA (ordine di reso)\"/>"
+msgstr "<span class=\"fa fa-reply\" role=\"img\" aria-label=\"RMA\" title=\"RMA (ordine di rientro)\"/>"
 
 #. module: rma_consignment_evaluation
 #: model_terms:ir.ui.view,arch_db:rma_consignment_evaluation.sale_order_portal_content
@@ -157,7 +157,7 @@ msgid "Conversion between Units of Measure can only occur if they belong to the 
 msgstr "Le conversioni tra unità di misura possono avvenire solo se appartengono alla stessa categoria. La conversione verrà effettuata in base alle proporzioni."
 
 #. module: rma_consignment_evaluation
-#: code:addons/rma_consignment_evaluation/models/sale.py:54
+#: code:addons/rma_consignment_evaluation/models/sale.py:55
 #: model_terms:ir.ui.view,arch_db:rma_consignment_evaluation.view_order_form
 #, python-format
 msgid "Create RMA"
@@ -253,6 +253,11 @@ msgid "Lines"
 msgstr "Righe"
 
 #. module: rma_consignment_evaluation
+#: model:ir.model.fields,field_description:rma_consignment_evaluation.field_sale_order_line_rma_wizard__lot_id
+msgid "Lot"
+msgstr "Lotto/i"
+
+#. module: rma_consignment_evaluation
 #: model:ir.model.fields,field_description:rma_consignment_evaluation.field_sale_order_line_rma_wizard__move_id
 msgid "Move"
 msgstr "Movimento"
@@ -305,7 +310,7 @@ msgstr "Ubicazione RMA"
 #. module: rma_consignment_evaluation
 #: model_terms:ir.ui.view,arch_db:rma_consignment_evaluation.request_rma_single_page
 msgid "RMA request for order"
-msgstr "Richiesta reso (RMA) per ordine"
+msgstr "Richiesta rientro (RMA) per ordine"
 
 #. module: rma_consignment_evaluation
 #: model:ir.model.fields,field_description:rma_consignment_evaluation.field_sale_order__rma_ids
@@ -322,6 +327,16 @@ msgstr "Richieste RMA"
 #: model_terms:ir.ui.view,arch_db:rma_consignment_evaluation.sale_rma_request_form
 msgid "Requested operation"
 msgstr "Operazione richiesta"
+
+#. module: rma_consignment_evaluation
+#: model:rma.operation,name:rma_consignment_evaluation.rma_operation_return
+msgid "Return"
+msgstr ""
+
+#. module: rma_consignment_evaluation
+#: model:rma.operation,name:rma_consignment_evaluation.rma_operation_sale
+msgid "Sale"
+msgstr "Vendita"
 
 #. module: rma_consignment_evaluation
 #: model:ir.model.fields,field_description:rma_consignment_evaluation.field_rma__sale_line_id
@@ -388,7 +403,7 @@ msgstr "Unità di misura"
 #. module: rma_consignment_evaluation
 #: model_terms:ir.ui.view,arch_db:rma_consignment_evaluation.sale_rma_request_form
 msgid "Use the comment button to add relevant information regarding the RMA, like returned serial numbers or a description of the issue"
-msgstr ""
+msgstr "Usare il campo note per aggiungere informazioni rilevanti il RMA come numero di serie o motivo del rientro"
 
 #. module: rma_consignment_evaluation
 #: model:ir.model.fields,help:rma_consignment_evaluation.field_sale_order_rma_wizard__custom_description
@@ -403,7 +418,7 @@ msgstr ""
 #. module: rma_consignment_evaluation
 #: model:ir.model.fields,help:rma_consignment_evaluation.field_sale_order_rma_wizard__partner_shipping_id
 msgid "Will be used to return the goods when the RMA is completed"
-msgstr "Will be used a return the goods è impostato a form solamente the RMA is completed"
+msgstr "Sarà usato per il rientro merce quando lo RMA è completato"
 
 #. module: rma_consignment_evaluation
 #: model:ir.model.fields,field_description:rma_consignment_evaluation.field_sale_order_line_rma_wizard__wizard_id

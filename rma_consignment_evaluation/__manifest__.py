@@ -3,8 +3,8 @@
     "name": "On Consignment and for Evaluation RMA",
     "version": "12.0.0.1.0",
     "category": "RMA",
-    "summary": "Sale Order - Return Merchandise Authorization (RMA)",
-    "author": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
+    "summary": "Return Merchandise Authorization (RMA) from Consignent/Evaluation",
+    "author": "Tecnativa,SHS-AV s.r.l.",
     "website": "https://www.zeroincombenze.it/crm",
     "development_status": "Beta",
     "license": "AGPL-3",
@@ -13,6 +13,7 @@
         "sale_stock",
     ],
     "data": [
+        "data/rma_operation_data.xml",
         "views/assets.xml",
         "views/report_rma.xml",
         "views/rma_views.xml",

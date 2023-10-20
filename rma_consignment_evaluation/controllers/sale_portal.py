@@ -15,7 +15,7 @@ class CustomerPortal(CustomerPortal):
                                                      access_token=access_token)
         except (AccessError, MissingError):
             return request.redirect('/my')
-        order_obj = request.env['sale.order']
+        # order_obj = request.env['sale.order']
         wizard_obj = request.env['sale.order.rma.wizard']
         # Set wizard line vals
         mapped_vals = {}
@@ -34,8 +34,9 @@ class CustomerPortal(CustomerPortal):
             (0, 0, vals) for vals in mapped_vals.values()
             if vals.get("operation_id")]
         # Create wizard an generate rmas
-        order = order_obj.browse(order_id).sudo()
-        location_id = order.warehouse_id.rma_loc_id.id
+        # order = order_obj.browse(order_id).sudo()
+        # location_id = order.warehouse_id.rma_loc_id.id
+        location_id = self.env.ref("stock.stock_location_stock").id
         # Add custom fields text
         custom_description = ""
         if custom_vals:

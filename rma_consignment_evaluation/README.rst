@@ -1,9 +1,9 @@
 
-=======================================================
-|icon| On Consignment and for Evaluation RMA 12.0.0.1.0
-=======================================================
+=====================================================================================
+|icon| On Consignment and for Evaluation RMA/RMA da c/deposito o c/visione 12.0.0.1.0
+=====================================================================================
 
-**Sale Order - Return Merchandise Authorization (RMA)**
+**Return Merchandise Authorization (RMA) from Consignent/Evaluation**
 
 .. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/rma/12.0/rma_consignment_evaluation/static/description/icon.png
 
@@ -16,14 +16,13 @@ Overview / Panoramica
 =====================
 
 |en| This module allows you to link a sales order to an RMA.
-This can be done by creating an RMA from scratch and selecting the sales
-order, creating one or more RMAs from a sales order form view or from a sales
-order web portal page.
+This can be done by creating one or more RMAs from the sales order form view.
 
 
 |
 
-|it| N/D
+|it| Descrizione non disponibile
+
 
 |
 
@@ -32,29 +31,11 @@ Usage / Utilizzo
 
 To use this module, you need to:
 
-#. Go to *RMA > Orders* and create a new RMA.
-#. Select a sales order to be linked to the RMA if you want.
-#. Now you can do the rest of the instructions described in the
-   *readme* of the rma module.
-
-If you want to create one or more RMAs from a sale order:
-
-#. Go to *Sales > Orders > Orders*.
-#. Create a new sales order or select an existing one.
-#. If the sales order is in 'Sales Order' state you can see in the status bar
-   a button labeled 'Create RMA', click it and a wizard will appear.
-#. Modify the data at your convenience and click on 'Accept' button.
-#. As many RMAs as lines with quantity greater than zero will be created.
-   Those RMAs will be linked to the sales order.
-
-The customer can also create RMAs from a sales order portal page:
-
-#. Go to a confirmed sales order portal page.
-#. In the left sidebar you can see a button named 'Request RMAs'.
-#. By clicking on this button a popup will appear to allow you to define
-   the quantity per product and delivery order line.
-#. Click on the 'Request RMAs' button and RMAs will be created linked to
-   the sales order.
+* Go to *Sales > Orders > Orders*.
+* Create a new sales order or select an existing one.
+* If the sales order is in 'Sales Order' state you can see in the status bar a button labeled [Create RMA], click it and a wizard will appear.
+* Modify the data at your convenience and click on [Accept] button.
+* As many RMAs as lines with quantity greater than zero will be created. Those RMAs will be linked to the sales order.
 
 
 |
@@ -80,11 +61,11 @@ Installation / Installazione
 |                                 |                                          |
 | Installation is built with:     | L'installazione è costruita con:         |
 +---------------------------------+------------------------------------------+
-| `Zeroincombenze Tools <https://zeroincombenze-tools.readthedocs.io/>`__    |
+| `Zeroincombenze Tools <https://zeroincombenze-tools.readthedocs.io/>`__ |
 +---------------------------------+------------------------------------------+
 | Suggested deployment is:        | Posizione suggerita per l'installazione: |
 +---------------------------------+------------------------------------------+
-| $HOME/12.0                                                                 |
+| $HOME/12.0 |
 +----------------------------------------------------------------------------+
 
 ::
@@ -203,15 +184,17 @@ Odoo is a trademark of `Odoo S.A. <https://www.odoo.com/>`__ (formerly OpenERP)
 Authors / Autori
 ----------------
 
-* SHS-AV s.r.l. <https://www.zeroincombenze.it>
+* `Tecnativa <https://www.tecnativa.com>`__
+* `SHS-AV s.r.l. <https://www.zeroincombenze.it>`__
 
 Contributors / Contributi da
 ----------------------------
 
 * Tecnativa <https://www.tecnativa.com>
-* * Ernesto Tejeda <False>
-* * Pedro M. Baeza <False>
-* * David Vidal <False>
+* Ernesto Tejeda <False>
+* Pedro M. Baeza <False>
+* David Vidal <False>
+* Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>
 
 Maintainer / Manutenzione
 -------------------------
@@ -237,7 +220,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of rma project.
 
-Last Update / Ultimo aggiornamento: 2023-10-12
+Last Update / Ultimo aggiornamento: 2023-10-19
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status

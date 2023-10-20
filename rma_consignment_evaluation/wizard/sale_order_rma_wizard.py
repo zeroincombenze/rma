@@ -25,7 +25,8 @@ class SaleOrderRmaWizard(models.TransientModel):
         comodel_name='stock.location',
         string='RMA location',
         domain=_domain_location_id,
-        default=lambda r: r.order_id.warehouse_id.rma_loc_id.id,
+        # default=lambda r: r.order_id.warehouse_id.rma_loc_id.id,
+        default=lambda self: self.env.ref("stock.stock_location_stock").id
     )
     commercial_partner_id = fields.Many2one(
         comodel_name="res.partner",
@@ -40,6 +41,21 @@ class SaleOrderRmaWizard(models.TransientModel):
     custom_description = fields.Text(
         help="Values coming from portal RMA request form custom fields",
     )
+    for_sale = fields.Boolean("Product for sale")
+
+    @api.onchange('for_sale')
+    def onchange_for_sale(self):
+        if self.for_sale:
+            # self.location_id = self.env.ref('stock.picking_type_out')
+            self.location_id = self.env.ref('stock.stock_location_customers')
+            for line in self.line_ids:
+                line.operation_id = line.env.ref(
+                    "rma_consignment_evaluation.rma_operation_sale")
+        else:
+            self.location_id = self.env.ref("stock.stock_location_stock")
+            for line in self.line_ids:
+                line.operation_id = line.env.ref(
+                    "rma_consignment_evaluation.rma_operation_return")
 
     def create_rma(self, from_portal=None):
         self.ensure_one()
@@ -132,9 +148,14 @@ class SaleOrderLineRmaWizard(models.TransientModel):
         comodel_name='stock.move',
         compute='_compute_move_id'
     )
+    lot_id = fields.Many2one(
+        'stock.production.lot', 'Lot',
+        compute='_compute_lot_id')
     operation_id = fields.Many2one(
         comodel_name='rma.operation',
         string='Requested operation',
+        default=lambda self: self.env.ref(
+            "rma_consignment_evaluation.rma_operation_return")
     )
     sale_line_id = fields.Many2one(
         comodel_name="sale.order.line",
@@ -146,6 +167,23 @@ class SaleOrderLineRmaWizard(models.TransientModel):
         self.picking_id = False
         self.uom_id = self.product_id.uom_id
 
+    @api.onchange('operation_id')
+    def onchange_operation_id(self):
+        if self.wizard_id.for_sale and self.operation_id != self.env.ref(
+                "rma_consignment_evaluation.rma_operation_sale"):
+            self.operation_id = False
+            return {'warning': {
+                'title': _('Warning!'),
+                'message': _('Invalid operation for sale')
+            }}
+        elif not self.wizard_id.for_sale and self.operation_id == self.env.ref(
+                "rma_consignment_evaluation.rma_operation_sale"):
+            self.operation_id = False
+            return {'warning': {
+                'title': _('Warning!'),
+                'message': _('Use only Sale operation')
+            }}
+
     @api.depends('picking_id')
     def _compute_move_id(self):
         for record in self:
@@ -155,6 +193,17 @@ class SaleOrderLineRmaWizard(models.TransientModel):
                         r.sale_line_id == record.sale_line_id and
                         r.sale_line_id.product_id == record.product_id
                         and r.sale_line_id.order_id == record.order_id))
+
+    @api.depends('product_id')
+    def _compute_lot_id(self):
+        for record in self:
+            if hasattr(self.env["sale.order.line"], "lot_id"):
+                # This code requires *sale_order_lot_selection* installed
+                record.lot_id = record.order_id.order_line.filtered(
+                    lambda ln: (
+                        ln == record.sale_line_id
+                        and ln.product_id == record.product_id
+                        and ln.order_id == record.order_id)).lot_id
 
     @api.depends('order_id')
     def _compute_allowed_product_ids(self):
@@ -192,4 +241,5 @@ class SaleOrderLineRmaWizard(models.TransientModel):
             'product_uom': self.uom_id.id,
             'operation_id': self.operation_id.id,
             'description': description,
+            'lot_id': self.lot_id.id if self.lot_id else False,
         }

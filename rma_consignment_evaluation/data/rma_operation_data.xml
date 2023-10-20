@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data noupdate="1">
+    <record id="rma_operation_return" model="rma.operation">
+        <field name="name">Return</field>
+    </record>
+    <record id="rma_operation_sale" model="rma.operation">
+        <field name="name">Sale</field>
+    </record>
+</data>

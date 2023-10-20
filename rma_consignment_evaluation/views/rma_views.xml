@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2020 Tecnativa - Ernesto Tejeda
-     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
+
     <record id="rma_view_form" model="ir.ui.view">
         <field name="name">rma.view.form</field>
         <field name="model">rma</field>
@@ -10,6 +9,11 @@
             <field name="partner_invoice_id" position="after">
                 <field name="order_id" options="{'no_create': True}"/>
             </field>
+            <field name="delivered_qty" position="after">
+                <field name="lot_id"
+                       options="{'no_create': True}"
+                        filter_domain="[('product_id','=',self.product_id.id)]"/>
+            </field>
             <sheet>
                 <field name="allowed_picking_ids" invisible="1"/>
                 <field name="allowed_move_ids" invisible="1"/>
@@ -17,4 +21,19 @@
             </sheet>
         </field>
     </record>
+
+    <record id="rma_view_tree" model="ir.ui.view">
+        <field name="name">rma.view.tree</field>
+        <field name="model">rma</field>
+        <field name="inherit_id" ref="rma.rma_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="product_uom" position="after">
+                <field name="lot_id"
+                       options="{'no_create': True}"
+                        filter_domain="[('product_id','=',self.product_id.id)]"/>
+                <field name="operation_id"/>
+            </field>
+        </field>
+    </record>
+
 </odoo>
