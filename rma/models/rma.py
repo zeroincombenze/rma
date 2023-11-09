@@ -1071,6 +1071,8 @@ class Rma(models.Model):
         picking_form.company_id = self.company_id
         picking_form.origin = origin or self.name
         picking_form.partner_id = self.partner_shipping_id
+        picking_form.location_id = self.picking_id.location_id
+        picking_form.location_dest_id = self.picking_id.location_dest_id
 
     def _prepare_returning_move(self, move_form, scheduled_date,
                                 quantity=None, uom=None):

@@ -1,0 +1,45 @@
+2023-11-09 13:37:31,000 92994 DAEMON test_rma_12 run_odoo_debug.sh: cd /home/odoo/12.0/venv_odoo && source ./bin/activate
+Couldn't read '/home/odoo/12.0/rma' as a config file
+
++===================================================================
+| please test [36mrma[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+Couldn't read '/home/odoo/12.0/rma' as a config file
+Couldn't read '/home/odoo/12.0/rma' as a config file
+2023-11-09 13:46:31,000 98334 DAEMON test_rma_12 run_odoo_debug.sh: cd /home/odoo/12.0/venv_odoo && source ./bin/activate
+Couldn't read '/home/odoo/12.0/rma' as a config file
+
++===================================================================
+| please test [36mrma[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+Couldn't read '/home/odoo/12.0/rma' as a config file
+Couldn't read '/home/odoo/12.0/rma' as a config file
+2023-11-09 13:49:19,000 103509 DAEMON test_rma_12 run_odoo_debug.sh: cd /home/odoo/12.0/venv_odoo && source ./bin/activate
+Couldn't read '/home/odoo/12.0/rma' as a config file
+
++===================================================================
+| please test [36mrma[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+Couldn't read '/home/odoo/12.0/rma' as a config file
+Couldn't read '/home/odoo/12.0/rma' as a config file
+2023-11-09 13:50:15,000 109068 DAEMON test_rma_12 run_odoo_debug.sh: cd /home/odoo/12.0/venv_odoo && source ./bin/activate
+Couldn't read '/home/odoo/12.0/rma' as a config file
+
++===================================================================
+| please test [36mrma[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+Couldn't read '/home/odoo/12.0/rma' as a config file
+Couldn't read '/home/odoo/12.0/rma' as a config file
+2023-11-09 13:54:31,000 114613 DAEMON test_rma_12 run_odoo_debug.sh: cd /home/odoo/12.0/venv_odoo && source ./bin/activate
+Couldn't read '/home/odoo/12.0/rma' as a config file
+
++===================================================================
+| please test [36mrma[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+Couldn't read '/home/odoo/12.0/rma' as a config file
+Couldn't read '/home/odoo/12.0/rma' as a config file

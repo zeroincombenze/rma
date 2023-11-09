@@ -169,19 +169,11 @@ class SaleOrderLineRmaWizard(models.TransientModel):
 
     @api.onchange('operation_id')
     def onchange_operation_id(self):
-        if self.wizard_id.for_sale and self.operation_id != self.env.ref(
-                "rma_consignment_evaluation.rma_operation_sale"):
+        if self.wizard_id.for_sale != self.operation_id.for_sale:
             self.operation_id = False
             return {'warning': {
                 'title': _('Warning!'),
-                'message': _('Invalid operation for sale')
-            }}
-        elif not self.wizard_id.for_sale and self.operation_id == self.env.ref(
-                "rma_consignment_evaluation.rma_operation_sale"):
-            self.operation_id = False
-            return {'warning': {
-                'title': _('Warning!'),
-                'message': _('Use only Sale operation')
+                'message': _('Invalid operation for RMA')
             }}
 
     @api.depends('picking_id')
@@ -227,19 +219,20 @@ class SaleOrderLineRmaWizard(models.TransientModel):
             (self.description or '') + (self.wizard_id.custom_description or '')
         )
         return {
-            'partner_id': self.order_id.partner_id.id,
-            'partner_invoice_id': self.order_id.partner_invoice_id.id,
-            'partner_shipping_id': partner_shipping.id,
-            'origin': self.order_id.name,
-            'company_id': self.order_id.company_id.id,
-            'location_id': self.wizard_id.location_id.id,
-            'order_id': self.order_id.id,
-            'picking_id': self.picking_id.id,
-            'move_id': self.move_id.id,
-            'product_id': self.product_id.id,
-            'product_uom_qty': self.quantity,
-            'product_uom': self.uom_id.id,
-            'operation_id': self.operation_id.id,
-            'description': description,
-            'lot_id': self.lot_id.id if self.lot_id else False,
+            "partner_id": self.order_id.partner_id.id,
+            "partner_invoice_id": self.order_id.partner_invoice_id.id,
+            "partner_shipping_id": partner_shipping.id,
+            "origin": self.order_id.name,
+            "company_id": self.order_id.company_id.id,
+            "location_id": self.wizard_id.location_id.id,
+            "order_id": self.order_id.id,
+            "picking_id": self.picking_id.id,
+            "move_id": self.move_id.id,
+            "product_id": self.product_id.id,
+            "product_uom_qty": self.quantity,
+            "product_uom": self.uom_id.id,
+            "operation_id": self.operation_id.id,
+            "description": description,
+            "lot_id": self.lot_id.id if self.lot_id else False,
+            "qty_to_invoice": self.quantity if self.operation_id.for_sale else 0.0
         }

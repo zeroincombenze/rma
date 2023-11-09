@@ -4,13 +4,12 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Return Merchandise Authorization Management",
-    "summary": "Return Merchandise Authorization (RMA)",
     "version": "12.0.2.6.0",
-    "development_status": "Production/Stable",
     "category": "RMA",
-    "website": "https://github.com/OCA/rma",
-    "author": "Tecnativa, Odoo Community Association (OCA)",
-    "maintainers": ["ernestotejeda"],
+    "summary": "Return Merchandise Authorization (RMA)",
+    "author": "Tecnativa,Odoo Community Association (OCA),SHS-AV s.r.l.",
+    "website": "https://www.zeroincombenze.it/crm",
+    "development_status": "Production/Stable",
     "license": "AGPL-3",
     "depends": [
         "account",
@@ -37,6 +36,8 @@
         "views/stock_warehouse_views.xml",
         "views/res_config_settings_views.xml",
     ],
-    'post_init_hook': 'post_init_hook',
+    "maintainer": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
+    "maintainers": ["ernestotejeda"],
+    "post_init_hook": "post_init_hook",
     "application": True,
 }

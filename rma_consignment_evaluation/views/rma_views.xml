@@ -13,6 +13,7 @@
                 <field name="lot_id"
                        options="{'no_create': True}"
                         filter_domain="[('product_id','=',self.product_id.id)]"/>
+                <field name="qty_to_invoice"/>
             </field>
             <sheet>
                 <field name="allowed_picking_ids" invisible="1"/>
@@ -32,6 +33,7 @@
                        options="{'no_create': True}"
                         filter_domain="[('product_id','=',self.product_id.id)]"/>
                 <field name="operation_id"/>
+                <field name="qty_to_invoice"/>
             </field>
         </field>
     </record>

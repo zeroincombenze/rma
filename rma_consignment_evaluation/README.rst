@@ -1,4 +1,3 @@
-
 =====================================================================================
 |icon| On Consignment and for Evaluation RMA/RMA da c/deposito o c/visione 12.0.0.1.0
 =====================================================================================
@@ -12,7 +11,7 @@
 
 
 
-Overview / Panoramica
+Overview | Panoramica
 =====================
 
 |en| This module allows you to link a sales order to an RMA.
@@ -24,9 +23,10 @@ This can be done by creating one or more RMAs from the sales order form view.
 |it| Descrizione non disponibile
 
 
+
 |
 
-Usage / Utilizzo
+Usage | Utilizzo
 ----------------
 
 To use this module, you need to:
@@ -38,19 +38,23 @@ To use this module, you need to:
 * As many RMAs as lines with quantity greater than zero will be created. Those RMAs will be linked to the sales order.
 
 
-|
 
-Getting started / Primi passi
+Getting started | Primi passi
 =============================
 
 |Try Me|
 
 
-|
-
-Installation / Installazione
+Prerequisites | Prerequisiti
 ----------------------------
 
+* python 3.7
+* postgresql 9.6+ (best 10.0+)
+
+
+
+Installation | Installazione
+----------------------------
 
 +---------------------------------+------------------------------------------+
 | |en|                            | |it|                                     |
@@ -94,11 +98,9 @@ From UI: go to:
 * |menu| Setting > Apps |right_do| Select **rma_consignment_evaluation** > Install
 
 
-|
 
-Upgrade / Aggiornamento
+Upgrade | Aggiornamento
 -----------------------
-
 
 ::
 
@@ -127,19 +129,15 @@ From UI: go to:
 * |menu| Setting > Apps |right_do| Select **rma_consignment_evaluation** > Update
 
 
-|
 
-Support / Supporto
+Support | Supporto
 ------------------
-
 
 |Zeroincombenze| This module is supported by the `SHS-AV s.r.l. <https://www.zeroincombenze.it/>`__
 
 
-|
-|
 
-Get involved / Ci mettiamo in gioco
+Get involved | Ci mettiamo in gioco
 ===================================
 
 Bug reports are welcome! You can use the issue tracker to report bugs,
@@ -148,9 +146,10 @@ and/or submit pull requests on `GitHub Issues
 
 In case of trouble, please check there if your issue has already been reported.
 
+
+
 Proposals for enhancement
 -------------------------
-
 
 |en| If you have a proposal to change this module, you may want to send an email to <cc@shs-av.com> for initial feedback.
 An Enhancement Proposal may be submitted if your idea gains ground.
@@ -158,19 +157,19 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 |it| Se hai proposte per migliorare questo modulo, puoi inviare una mail a <cc@shs-av.com> per un iniziale contatto.
 
 
-ChangeLog History / Cronologia modifiche
+
+ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
-12.0.0.1.0 (2023-10-12)
+12.0.0.1.0 (2023-11-09)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * Initial implementation
+* [QUA] Test coverage 36% (303: 195+108) [0 TestPoints] - quality rating 65 (target 100)
 
 
-|
-|
 
-Credits / Didascalie
+Credits | Didascalie
 ====================
 
 Copyright
@@ -179,29 +178,30 @@ Copyright
 Odoo is a trademark of `Odoo S.A. <https://www.odoo.com/>`__ (formerly OpenERP)
 
 
-|
-
-Authors / Autori
+Authors | Autori
 ----------------
 
-* `Tecnativa <https://www.tecnativa.com>`__
-* `SHS-AV s.r.l. <https://www.zeroincombenze.it>`__
+* Tecnativa <https://www.tecnativa.com>
+* SHS-AV s.r.l. <https://www.zeroincombenze.it>
 
-Contributors / Contributi da
+
+
+Contributors | Contributi da
 ----------------------------
 
-* Tecnativa <https://www.tecnativa.com>
-* Ernesto Tejeda <False>
-* Pedro M. Baeza <False>
-* David Vidal <False>
+* Ernesto Tejeda <ernesto.tejeda@tecnativa.com>
+* Pedro M. Baeza <pedro.baeza@tecnativa.com>
+* David Vidal <david.vidal@tecnativa.com>
 * Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>
 
-Maintainer / Manutenzione
+
+
+Maintainer | Manutenzione
 -------------------------
 
 Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>
 
-|
+
 
 ----------------
 
@@ -217,10 +217,11 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 
 |
+|
 
 This module is part of rma project.
 
-Last Update / Ultimo aggiornamento: 2023-10-19
+Last Update / Ultimo aggiornamento: 2023-11-09
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
@@ -280,5 +281,3 @@ Last Update / Ultimo aggiornamento: 2023-10-19
    :target: https://github.com/zeroincombenze/grymb/blob/master/certificates/ade/scope/fatturapa.md
 .. |chat_with_us| image:: https://www.shs-av.com/wp-content/chat_with_us.gif
    :target: https://t.me/Assitenza_clienti_powERP
-
-

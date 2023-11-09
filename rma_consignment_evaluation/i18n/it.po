@@ -1,20 +1,21 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* rma_consignment_evaluation
+# 	* rma_consignment_evaluation
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo (12.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-18 16:08+0000\n"
-"PO-Revision-Date: 2023-10-18 16:08+0000\n"
+"POT-Creation-Date: 2023-10-22 18:33+0000\n"
+"PO-Revision-Date: 2023-11-09 09:56+0100\n"
 "Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
 "Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4\n"
 
 #. module: rma_consignment_evaluation
 #: code:addons/rma_consignment_evaluation/controllers/sale_portal.py:57
@@ -23,13 +24,13 @@ msgid " (Portal)"
 msgstr " (Portale)"
 
 #. module: rma_consignment_evaluation
-#: code:addons/rma_consignment_evaluation/wizard/sale_order_rma_wizard.py:55
+#: code:addons/rma_consignment_evaluation/wizard/sale_order_rma_wizard.py:70
 #, python-format
 msgid " has been created."
 msgstr " è stato creato."
 
 #. module: rma_consignment_evaluation
-#: code:addons/rma_consignment_evaluation/wizard/sale_order_rma_wizard.py:57
+#: code:addons/rma_consignment_evaluation/wizard/sale_order_rma_wizard.py:72
 #, python-format
 msgid " have been created."
 msgstr " sono stati creati."
@@ -119,7 +120,7 @@ msgstr "Prodotto ammesso"
 #. module: rma_consignment_evaluation
 #: model_terms:ir.ui.view,arch_db:rma_consignment_evaluation.sale_order_rma_wizard_form_view
 msgid "Cancel"
-msgstr "Annulla"
+msgstr "Annullare"
 
 #. module: rma_consignment_evaluation
 #: model:ir.model.fields,field_description:rma_consignment_evaluation.field_sale_order_line_rma_wizard__uom_category_id
@@ -230,6 +231,12 @@ msgid "If no requested operation is set, the RMA won't be correctly fulfilled"
 msgstr ""
 
 #. module: rma_consignment_evaluation
+#: code:addons/rma_consignment_evaluation/wizard/sale_order_rma_wizard.py:176
+#, python-format
+msgid "Invalid operation for RMA"
+msgstr "Operazione non valida per RMA"
+
+#. module: rma_consignment_evaluation
 #: model:ir.model.fields,field_description:rma_consignment_evaluation.field_sale_order_line_rma_wizard____last_update
 #: model:ir.model.fields,field_description:rma_consignment_evaluation.field_sale_order_rma_wizard____last_update
 msgid "Last Modified on"
@@ -253,6 +260,7 @@ msgid "Lines"
 msgstr "Righe"
 
 #. module: rma_consignment_evaluation
+#: model:ir.model.fields,field_description:rma_consignment_evaluation.field_rma__lot_id
 #: model:ir.model.fields,field_description:rma_consignment_evaluation.field_sale_order_line_rma_wizard__lot_id
 msgid "Lot"
 msgstr "Lotto/i"
@@ -261,6 +269,11 @@ msgstr "Lotto/i"
 #: model:ir.model.fields,field_description:rma_consignment_evaluation.field_sale_order_line_rma_wizard__move_id
 msgid "Move"
 msgstr "Movimento"
+
+#. module: rma_consignment_evaluation
+#: model:ir.model.fields,field_description:rma_consignment_evaluation.field_rma_operation__for_sale
+msgid "Operation for sale"
+msgstr "Operazione di vendita"
 
 #. module: rma_consignment_evaluation
 #: model:ir.model.fields,field_description:rma_consignment_evaluation.field_sale_order_line_rma_wizard__order_id
@@ -284,6 +297,16 @@ msgstr "Movimento originale"
 #: model_terms:ir.ui.view,arch_db:rma_consignment_evaluation.sale_rma_request_form
 msgid "Product"
 msgstr "Prodotti"
+
+#. module: rma_consignment_evaluation
+#: model:ir.model.fields,field_description:rma_consignment_evaluation.field_sale_order_rma_wizard__for_sale
+msgid "Product for sale"
+msgstr "Prodotto da vendere"
+
+#. module: rma_consignment_evaluation
+#: model:ir.model.fields,field_description:rma_consignment_evaluation.field_rma__qty_to_invoice
+msgid "Qty to Invoice"
+msgstr "Q.tà da fatturare"
 
 #. module: rma_consignment_evaluation
 #: model:ir.model.fields,field_description:rma_consignment_evaluation.field_sale_order_line_rma_wizard__quantity
@@ -310,7 +333,12 @@ msgstr "Ubicazione RMA"
 #. module: rma_consignment_evaluation
 #: model_terms:ir.ui.view,arch_db:rma_consignment_evaluation.request_rma_single_page
 msgid "RMA request for order"
-msgstr "Richiesta rientro (RMA) per ordine"
+msgstr "Richiesta reso (RMA) per ordine"
+
+#. module: rma_consignment_evaluation
+#: model:ir.model,name:rma_consignment_evaluation.model_rma_operation
+msgid "RMA requested operation"
+msgstr "Operazione richiesta reso"
 
 #. module: rma_consignment_evaluation
 #: model:ir.model.fields,field_description:rma_consignment_evaluation.field_sale_order__rma_ids
@@ -331,7 +359,12 @@ msgstr "Operazione richiesta"
 #. module: rma_consignment_evaluation
 #: model:rma.operation,name:rma_consignment_evaluation.rma_operation_return
 msgid "Return"
-msgstr ""
+msgstr "Reso"
+
+#. module: rma_consignment_evaluation
+#: model:ir.model,name:rma_consignment_evaluation.model_stock_return_picking
+msgid "Return Picking"
+msgstr "Prelievo per reso"
 
 #. module: rma_consignment_evaluation
 #: model:rma.operation,name:rma_consignment_evaluation.rma_operation_sale
@@ -408,7 +441,13 @@ msgstr "Usare il campo note per aggiungere informazioni rilevanti il RMA come nu
 #. module: rma_consignment_evaluation
 #: model:ir.model.fields,help:rma_consignment_evaluation.field_sale_order_rma_wizard__custom_description
 msgid "Values coming from portal RMA request form custom fields"
-msgstr " coming from portal RMA request albero custom campi"
+msgstr "Values coming from portal RMA request form custom fields"
+
+#. module: rma_consignment_evaluation
+#: code:addons/rma_consignment_evaluation/wizard/sale_order_rma_wizard.py:175
+#, python-format
+msgid "Warning!"
+msgstr ""
 
 #. module: rma_consignment_evaluation
 #: model_terms:ir.ui.view,arch_db:rma_consignment_evaluation.res_config_settings_view_form
@@ -445,5 +484,3 @@ msgstr "Si può creare ordini di reso soltanto per ordini confermati."
 #: model_terms:ir.ui.view,arch_db:rma_consignment_evaluation.sale_rma_request_form
 msgid "You're about to perform an RMA request. Our team will process it an will reach you once it's validated. Keep in mind that:"
 msgstr ""
-
-

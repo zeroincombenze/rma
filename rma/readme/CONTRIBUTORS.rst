@@ -1,5 +1,3 @@
-* `Tecnativa <https://www.tecnativa.com>`_:
-
-  * Ernesto Tejeda
-  * Pedro M. Baeza
-  * David Vidal
+* Ernesto Tejeda <ernesto.tejeda@tecnativa.com>
+* Pedro M. Baeza <pedro.baeza@tecnativa.com>
+* David Vidal <david.vidal@tecnativa.com>

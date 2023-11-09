@@ -21,7 +21,7 @@ class ReturnPicking(models.TransientModel):
                     and ln.id in move_line_ids_to_update
                 )
             )
-            # Here quantity test is not important because RMA has just 1 product
+            # Here quantity comparation is not important because RMA has just 1 product
             if (
                     move_line and not move_line.lot_id
                     # and (move_line.product_uom_qty == line.qty_done)

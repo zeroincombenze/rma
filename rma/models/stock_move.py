@@ -75,7 +75,7 @@ class StockMove(models.Model):
         to_be_received.update_received_state_on_reception()
         # Set RMAs as delivered
         move_done.mapped('rma_id').update_replaced_state()
-        move_done.mapped('rma_id').update_returned_state()
+        # move_done.mapped('rma_id').update_returned_state()
         return res
 
     @api.model

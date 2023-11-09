@@ -43,6 +43,11 @@ class Rma(models.Model):
     lot_id = fields.Many2one(
         'stock.production.lot', 'Lot',
     )
+    qty_to_invoice = fields.Float('Qty to Invoice', readonly=True, default=0.0)
+    for_sale = fields.Boolean(
+        related='operation_id.for_sale',
+        string="Operation for sale",
+        store=True)
 
     @api.depends('partner_id', 'order_id')
     def _compute_allowed_picking_ids(self):

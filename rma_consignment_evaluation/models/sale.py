@@ -101,6 +101,16 @@ class SaleOrder(models.Model):
 class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
+    @api.multi
+    def _compute_qty_delivered(self):
+        super(SaleOrderLine, self)._compute_qty_delivered()
+        lines = self.filtered(lambda sol: sol.qty_delivered_method == "on_demand")
+        for line in lines:
+            line.qty_delivered = sum([
+                ln.qty_to_invoice
+                for ln in self.env["rma"].search(
+                    [("sale_line_id", "=", line.id)])])
+
     def get_delivery_move(self):
         self.ensure_one()
         return self.move_ids.filtered(lambda r: (
