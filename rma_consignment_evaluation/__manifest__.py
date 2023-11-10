@@ -11,6 +11,7 @@
     "depends": [
         "rma",
         "sale_stock",
+        "l10n_it_ddt",
     ],
     "data": [
         "data/rma_operation_data.xml",

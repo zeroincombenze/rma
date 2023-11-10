@@ -6,3 +6,4 @@ from . import rma_operation
 from . import sale
 from . import stock_move
 from . import stock_picking
+from . import stock_picking_package_preparation

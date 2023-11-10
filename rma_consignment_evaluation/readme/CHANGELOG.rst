@@ -1,5 +1,5 @@
-12.0.0.1.0 (2023-11-09)
+12.0.0.1.0 (2023-11-10)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * Initial implementation
-* [QUA] Test coverage 36% (303: 195+108) [0 TestPoints] - quality rating 65 (target 100)
+* [QUA] Test coverage 34% (333: 221+112) [0 TestPoints] - quality rating 68 (target 100)
