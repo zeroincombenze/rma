@@ -1,7 +1,6 @@
-
-===============================================================================
-|icon| Return Merchandise Authorization Management - Link with Sales 12.0.1.8.0
-===============================================================================
+========================================================================================
+|icon| Return Merchandise Authorization Management - Link with Sales/rma_sale 12.0.1.8.0
+========================================================================================
 
 **Sale Order - Return Merchandise Authorization (RMA)**
 
@@ -12,7 +11,7 @@
 
 
 
-Overview / Panoramica
+Overview | Panoramica
 =====================
 
 |en| This module allows you to link a sales order to an RMA.
@@ -23,11 +22,12 @@ order web portal page.
 
 |
 
-|it| N/D
+|it| Nessuna informazione disponibile
+
 
 |
 
-Usage / Utilizzo
+Usage | Utilizzo
 ----------------
 
 To use this module, you need to:
@@ -57,19 +57,23 @@ The customer can also create RMAs from a sales order portal page:
    the sales order.
 
 
-|
 
-Getting started / Primi passi
+Getting started | Primi passi
 =============================
 
 |Try Me|
 
 
-|
-
-Installation / Installazione
+Prerequisites | Prerequisiti
 ----------------------------
 
+* python 3.7
+* postgresql 9.6+ (best 10.0+)
+
+
+
+Installation | Installazione
+----------------------------
 
 +---------------------------------+------------------------------------------+
 | |en|                            | |it|                                     |
@@ -80,11 +84,11 @@ Installation / Installazione
 |                                 |                                          |
 | Installation is built with:     | L'installazione è costruita con:         |
 +---------------------------------+------------------------------------------+
-| `Zeroincombenze Tools <https://zeroincombenze-tools.readthedocs.io/>`__    |
+| `Zeroincombenze Tools <https://zeroincombenze-tools.readthedocs.io/>`__ |
 +---------------------------------+------------------------------------------+
 | Suggested deployment is:        | Posizione suggerita per l'installazione: |
 +---------------------------------+------------------------------------------+
-| $HOME/12.0                                                                 |
+| $HOME/12.0 |
 +----------------------------------------------------------------------------+
 
 ::
@@ -113,11 +117,9 @@ From UI: go to:
 * |menu| Setting > Apps |right_do| Select **rma_sale** > Install
 
 
-|
 
-Upgrade / Aggiornamento
+Upgrade | Aggiornamento
 -----------------------
-
 
 ::
 
@@ -146,19 +148,15 @@ From UI: go to:
 * |menu| Setting > Apps |right_do| Select **rma_sale** > Update
 
 
-|
 
-Support / Supporto
+Support | Supporto
 ------------------
-
 
 |Zeroincombenze| This module is supported by the `SHS-AV s.r.l. <https://www.zeroincombenze.it/>`__
 
 
-|
-|
 
-Get involved / Ci mettiamo in gioco
+Get involved | Ci mettiamo in gioco
 ===================================
 
 Bug reports are welcome! You can use the issue tracker to report bugs,
@@ -167,9 +165,10 @@ and/or submit pull requests on `GitHub Issues
 
 In case of trouble, please check there if your issue has already been reported.
 
+
+
 Proposals for enhancement
 -------------------------
-
 
 |en| If you have a proposal to change this module, you may want to send an email to <cc@shs-av.com> for initial feedback.
 An Enhancement Proposal may be submitted if your idea gains ground.
@@ -177,7 +176,8 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 |it| Se hai proposte per migliorare questo modulo, puoi inviare una mail a <cc@shs-av.com> per un iniziale contatto.
 
 
-ChangeLog History / Cronologia modifiche
+
+ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
 12.0.0.1.0 (2018-10-04)
@@ -186,10 +186,8 @@ ChangeLog History / Cronologia modifiche
 * Initial implementation
 
 
-|
-|
 
-Credits / Didascalie
+Credits | Didascalie
 ====================
 
 Copyright
@@ -198,28 +196,30 @@ Copyright
 Odoo is a trademark of `Odoo S.A. <https://www.odoo.com/>`__ (formerly OpenERP)
 
 
-|
-
-Authors / Autori
+Authors | Autori
 ----------------
 
-* `Antonio M. Vigliotti <False>`__
+* `Tecnativa <https://www.tecnativa.com>`__
 * `SHS-AV s.r.l. <https://www.zeroincombenze.it>`__
 
-Contributors / Contributi da
+
+
+Contributors | Contributi da
 ----------------------------
 
-* Tecnativa <https://www.tecnativa.com>
+* `Tecnativa <https://www.tecnativa.com>`__
 * * Ernesto Tejeda <False>
 * * Pedro M. Baeza <False>
 * * David Vidal <False>
 
-Maintainer / Manutenzione
+
+
+Maintainer | Manutenzione
 -------------------------
 
-Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>
+* `Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>`__
 
-|
+
 
 ----------------
 
@@ -235,10 +235,11 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 
 |
+|
 
 This module is part of rma project.
 
-Last Update / Ultimo aggiornamento: 2023-10-12
+Last Update / Ultimo aggiornamento: 2023-11-14
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
@@ -298,5 +299,3 @@ Last Update / Ultimo aggiornamento: 2023-10-12
    :target: https://github.com/zeroincombenze/grymb/blob/master/certificates/ade/scope/fatturapa.md
 .. |chat_with_us| image:: https://www.shs-av.com/wp-content/chat_with_us.gif
    :target: https://t.me/Assitenza_clienti_powERP
-
-

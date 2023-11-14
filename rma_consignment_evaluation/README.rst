@@ -14,13 +14,30 @@
 Overview | Panoramica
 =====================
 
-|en| This module allows you to link a sales order to an RMA.
-This can be done by creating one or more RMAs from the sales order form view.
+|en| This module allows you to create a RMA from sale order,
+both for return both for sale.
 
 
 |
 
-|it| Descrizione non disponibile
+|it| Questo modulo permette di creare RMA sia di rinetro che di vendita.
+
+
+
+Features | Caratteristiche
+--------------------------
+
++-------------------------------------------------------------------------------+----------+--------------------------+
+| Description | Descrizione                                                     | Z0incomb | Note(s)                  |
++-------------------------------------------------------------------------------+----------+--------------------------+
+| RMA for return | RMA di reso                                                  | ✅        | Like standard RMA module |
++-------------------------------------------------------------------------------+----------+--------------------------+
+| RMA for sale | RMA di vendita                                                 | ✅        |                          |
++-------------------------------------------------------------------------------+----------+--------------------------+
+| RMA with S.N./Lot from original Picking | Lotti/n.serie da consegna originale | ✅        |                          |
++-------------------------------------------------------------------------------+----------+--------------------------+
+| RMA for sale set q.ty to invoice | RMA di vendita attiva q.tà da fatturare    | ✅        |                          |
++-------------------------------------------------------------------------------+----------+--------------------------+
 
 
 
@@ -31,11 +48,11 @@ Usage | Utilizzo
 
 To use this module, you need to:
 
-* Go to *Sales > Orders > Orders*.
-* Create a new sales order or select an existing one.
-* If the sales order is in 'Sales Order' state you can see in the status bar a button labeled [Create RMA], click it and a wizard will appear.
-* Modify the data at your convenience and click on [Accept] button.
-* As many RMAs as lines with quantity greater than zero will be created. Those RMAs will be linked to the sales order.
+#. ☰ Sales > Sales Orders > Orders
+#. Create a new sales order or select an existing one
+#. When the sales order is in 'Sales Order' state you can see in the status bar a button labeled [Create RMA], click it and a wizard will appear
+#. Modify the data at your convenience and click on [Accept] button
+#. As many RMAs as lines with quantity greater than zero will be created; Those RMAs will be linked to the sales order
 
 
 
@@ -96,6 +113,18 @@ From UI: go to:
 * |menu| Setting > Activate Developer mode
 * |menu| Apps > Update Apps List
 * |menu| Setting > Apps |right_do| Select **rma_consignment_evaluation** > Install
+
+
+
+Configuration | Configurazione
+------------------------------
+
+To configure RMA you need to:
+
+☰ Sales > Configuration > Sales Orders Types >
+Create a new sale order type with all the settings you want
+
+The field 'Picking Auto Confirmation' requires module *sale_order_lot_selection*.
 
 
 
@@ -161,11 +190,11 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
-12.0.0.1.0 (2023-11-09)
+12.0.0.1.0 (2023-11-14)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * Initial implementation
-* [QUA] Test coverage 36% (303: 195+108) [0 TestPoints] - quality rating 65 (target 100)
+* [QUA] Test coverage 38% (117: 72+45) [0 TestPoints] - quality rating 28 (target 100)
 
 
 
@@ -181,25 +210,24 @@ Odoo is a trademark of `Odoo S.A. <https://www.odoo.com/>`__ (formerly OpenERP)
 Authors | Autori
 ----------------
 
-* Tecnativa <https://www.tecnativa.com>
-* SHS-AV s.r.l. <https://www.zeroincombenze.it>
+* `SHS-AV s.r.l. <https://www.zeroincombenze.it>`__
 
 
 
 Contributors | Contributi da
 ----------------------------
 
-* Ernesto Tejeda <ernesto.tejeda@tecnativa.com>
-* Pedro M. Baeza <pedro.baeza@tecnativa.com>
-* David Vidal <david.vidal@tecnativa.com>
-* Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>
+* `Ernesto Tejeda <ernesto.tejeda@tecnativa.com>`__
+* `Pedro M. Baeza <pedro.baeza@tecnativa.com>`__
+* `David Vidal <david.vidal@tecnativa.com>`__
+* `Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>`__
 
 
 
 Maintainer | Manutenzione
 -------------------------
 
-Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>
+* `Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>`__
 
 
 
@@ -221,7 +249,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of rma project.
 
-Last Update / Ultimo aggiornamento: 2023-11-10
+Last Update / Ultimo aggiornamento: 2023-11-14
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status

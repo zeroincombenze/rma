@@ -6,20 +6,12 @@
         <field name="model">rma</field>
         <field name="inherit_id" ref="rma.rma_view_form"/>
         <field name="arch" type="xml">
-            <field name="partner_invoice_id" position="after">
-                <field name="order_id" options="{'no_create': True}"/>
-            </field>
             <field name="delivered_qty" position="after">
                 <field name="lot_id"
                        options="{'no_create': True}"
                         filter_domain="[('product_id','=',self.product_id.id)]"/>
                 <field name="qty_to_invoice"/>
             </field>
-            <sheet>
-                <field name="allowed_picking_ids" invisible="1"/>
-                <field name="allowed_move_ids" invisible="1"/>
-                <field name="allowed_product_ids" invisible="1"/>
-            </sheet>
         </field>
     </record>
 

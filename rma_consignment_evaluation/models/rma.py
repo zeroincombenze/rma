@@ -6,91 +6,50 @@ from odoo import api, fields, models
 class Rma(models.Model):
     _inherit = "rma"
 
-    order_id = fields.Many2one(
-        comodel_name='sale.order',
-        string='Sale Order',
-        domain="["
-               "    ('partner_id', 'child_of', commercial_partner_id),"
-               "    ('state', 'in', ['sale', 'done']),"
-               "]",
-        readonly=True,
-        states={'draft': [('readonly', False)]},
-    )
-    allowed_picking_ids = fields.Many2many(
-        comodel_name='stock.picking',
-        compute="_compute_allowed_picking_ids",
-    )
-    picking_id = fields.Many2one(
-        domain="[('id', 'in', allowed_picking_ids)]",
-    )
-    allowed_move_ids = fields.Many2many(
-        comodel_name='sale.order.line',
-        compute="_compute_allowed_move_ids",
-    )
-    move_id = fields.Many2one(
-        domain="[('id', 'in', allowed_move_ids)]",
-    )
-    sale_line_id = fields.Many2one(
-        related="move_id.sale_line_id",
-    )
-    allowed_product_ids = fields.Many2many(
-        comodel_name='product.product',
-        compute="_compute_allowed_product_ids",
-    )
-    product_id = fields.Many2one(
-        domain="[('id', 'in', allowed_product_ids)]",
-    )
     lot_id = fields.Many2one(
         'stock.production.lot', 'Lot',
     )
+    original_order_not_sale = fields.Boolean(
+        related='order_id.type_id.not_sale',
+        string="Original order not for sale",
+        store=True)
     qty_to_invoice = fields.Float('Qty to Invoice', readonly=True, default=0.0)
     for_sale = fields.Boolean(
         related='operation_id.for_sale',
-        string="Operation for sale",
+        string="RMA operation for sale",
         store=True)
 
-    @api.depends('partner_id', 'order_id')
-    def _compute_allowed_picking_ids(self):
-        domain = [('state', '=', 'done'),
-                  ('picking_type_id.code', '=', 'outgoing')]
-        for rec in self:
-            # if rec.partner_id:
-            commercial_partner = rec.partner_id.commercial_partner_id
-            domain.append(('partner_id', 'child_of', commercial_partner.id))
-            if rec.order_id:
-                domain.append(('sale_id', '=', rec.order_id.id))
-            rec.allowed_picking_ids = self.env['stock.picking'].search(domain)
-
-    @api.depends('order_id', 'picking_id')
-    def _compute_allowed_move_ids(self):
-        for rec in self:
-            if rec.order_id:
-                order_move = rec.order_id.order_line.mapped('move_ids')
-                rec.allowed_move_ids = order_move.filtered(
-                    lambda r: r.picking_id == self.picking_id).ids
-            else:
-                rec.allowed_move_ids = self.picking_id.move_lines.ids
-
-    @api.depends('order_id')
-    def _compute_allowed_product_ids(self):
-        for rec in self:
-            if rec.order_id:
-                order_product = rec.order_id.order_line.mapped('product_id')
-                rec.allowed_product_ids = order_product.filtered(
-                    lambda r: r.type in ['consu', 'product']).ids
-            else:
-                rec.allowed_product_ids = self.env['product.product'].search(
-                    [('type', 'in', ['consu', 'product'])]).ids
-
-    @api.onchange("partner_id")
-    def _onchange_partner_id(self):
-        res = super()._onchange_partner_id()
-        self.order_id = False
+    def _domain_location_id(self):
+        res = super()._domain_location_id()
+        if self.for_sale:
+            return [("usage", "=", 'customer')]
+        res.insert(0, "|")
+        res.append(("id", "=", self.env.ref("stock.stock_location_stock").id))
         return res
 
-    @api.onchange('order_id')
-    def _onchange_order_id(self):
-        self.product_id = self.picking_id = False
+    def _compute_can_be_refunded(self):
+        super()._compute_can_be_refunded()
+        for rma in self:
+            if rma .original_order_not_sale:
+                rma.can_be_refunded = False
+
+    def _compute_can_be_returned(self):
+        super()._compute_can_be_returned()
+        for rma in self:
+            if rma .original_order_not_sale:
+                rma.can_be_returned = False
+
+    def _compute_can_be_replaced(self):
+        super()._compute_can_be_replaced()
+        for rma in self:
+            if rma .original_order_not_sale:
+                rma.can_be_replaced = False
+
+    def _compute_can_be_split(self):
+        super()._compute_can_be_split()
+        for rma in self:
+            if rma .original_order_not_sale:
+                rma.can_be_split = False
 
     @api.onchange('product_id')
     def _onchange_product_id_set_lot_domain(self):
@@ -98,40 +57,7 @@ class Rma(models.Model):
             'domain': {'lot_id': [('product_id', '=', self.product_id.id)]}
         }
 
-    def _prepare_refund(self, invoice_form, origin):
-        """Inject salesman from sales order (if any)"""
-        res = super()._prepare_refund(invoice_form, origin)
-        if self.order_id:
-            invoice_form.user_id = self.order_id.user_id
-        return res
-
-    def _get_refund_line_price_unit(self):
-        """Get the sale order price unit"""
-        if self.sale_line_id:
-            return self.sale_line_id.price_unit
-        return super()._get_refund_line_price_unit()
-
-    def _get_refund_line_product(self):
-        """To be overriden in a third module with the proper origin values
-        in case a kit is linked with the rma """
-        if not self.sale_line_id:
-            return super()._get_refund_line_product()
-        return self.sale_line_id.product_id
-
-    def _prepare_refund_line(self, line_form):
-        """Add line data"""
-        super()._prepare_refund_line(line_form)
-        line = self.sale_line_id
-        if line:
-            line_form.discount = line.discount
-
-    def _get_extra_refund_line_vals(self):
-        """Link sale line"""
-        self.ensure_one()
-        vals = super()._get_extra_refund_line_vals()
-        line = self.sale_line_id
-        if line:
-            vals.update({
-                "sequence": line.sequence,
-            })
-        return vals
+    def action_confirm(self):
+        super().action_confirm()
+        if self.sale_line_id.qty_delivered_method == "on_demand":
+            self.sale_line_id._compute_qty_delivered()

@@ -1,0 +1,19 @@
+2023-11-14 15:24:56,000 2928334 DAEMON test_rma_12 run_odoo_debug.sh: cd /home/odoo/12.0/venv_odoo && source ./bin/activate
+Couldn't read '/home/odoo/12.0/rma' as a config file
+
++===================================================================
+| please test [36mrma[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+Couldn't read '/home/odoo/12.0/rma' as a config file
+Couldn't read '/home/odoo/12.0/rma' as a config file
+2023-11-14 15:26:06,000 2932708 DAEMON test_rma_12 run_odoo_debug.sh: cd /home/odoo/12.0/venv_odoo && source ./bin/activate
+2023-11-14 15:31:21,000 2937173 DAEMON test_rma_12 run_odoo_debug.sh: cd /home/odoo/12.0/venv_odoo && source ./bin/activate
+Couldn't read '/home/odoo/12.0/rma' as a config file
+
++===================================================================
+| please test [36mrma[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+Couldn't read '/home/odoo/12.0/rma' as a config file
+Couldn't read '/home/odoo/12.0/rma' as a config file

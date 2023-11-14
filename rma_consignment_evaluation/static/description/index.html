@@ -21,18 +21,65 @@
                 <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
                 <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
             </p>
-            <p class="oe_mt16" align="justify">This module allows you to link a sales order to an RMA.
-This can be done by creating one or more RMAs from the sales order form view.
+            <p class="oe_mt16" align="justify">This module allows you to create a RMA from sale order,
+both for return both for sale.
 </p>
         </div>
         <div class="oe_span6">
             <p align="center">
                 <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
             </p>
-            <p class="oe_mt16" align="justify">Descrizione non disponibile
+            <p class="oe_mt16" align="justify">Questo modulo permette di creare RMA sia di rinetro che di vendita.
 </p>
         </div>
         
+    </div>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Features | Caratteristiche</h3>
+        <div class="oe_span12">
+<table style="width:100%; padding:2px; border-spacing:2px; text-align:left;"><tr>
+<td>Description</td><td>Descrizione</td><td>Z0incomb</td><td>Note(s)</td><td/>
+</tr><tr>
+<td>RMA for return</td><td>RMA di reso</td><td>&#9989;</td><td>Like standard RMA module</td><td/>
+</tr><tr>
+<td>RMA for sale</td><td>RMA di vendita</td><td>&#9989;</td><td/><td/>
+</tr><tr>
+<td>RMA with S.N./Lot from original Picking</td><td>Lotti/n.serie da consegna originale</td><td>&#9989;</td><td/><td/>
+</tr><tr>
+<td>RMA for sale set q.ty to invoice</td><td>RMA di vendita attiva q.t&#224; da fatturare</td><td>&#9989;</td><td/><td/>
+</tr></table>
+
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Configuration | Configurazione</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">To configure RMA you need to:
+<p align="justify">
+<span class="fa fa-th-large" style="color:#7C7BAD"/> Sales &#187; Configuration &#187; Sales Orders Types &#187;
+Create a new sale order type with all the settings you want
+</p><p align="justify">
+The field 'Picking Auto Confirmation' requires module <i>sale_order_lot_selection</i>.
+</p>
+</p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Per configurare il modulo.
+<p align="justify">
+<span class="fa fa-th-large" style="color:#7C7BAD"/> Vendite &#187; Configurazione &#187; Tipi Ordine di vendita &#187;
+Impostare la configurazione desiderata dell'ordine di vendita.
+</p><p align="justify">
+Il campo 'Auto conferma prelievo' richiede il modulo <i>sale_order_lot_selection</i>.
+</p>
+</p>
+        </div>
     </div>
     <div class="oe_row oe_spaced">
         <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
@@ -43,21 +90,13 @@ This can be done by creating one or more RMAs from the sales order form view.
             </p>
             <p class="oe_mt16" align="justify">To use this module, you need to:
 <p align="justify">
-<ul>
-<li>Go to *Sales &gt; Orders &gt; Orders*.</li>
-</ul>
-<ul>
-<li>Create a new sales order or select an existing one.</li>
-</ul>
-<ul>
-<li>If the sales order is in 'Sales Order' state you can see in the status bar a button labeled <span style="color:white;background-color:#7C7BAD">&#160;Create&#160;RMA&#160;</span>, click it and a wizard will appear.</li>
-</ul>
-<ul>
-<li>Modify the data at your convenience and click on <span style="color:white;background-color:#7C7BAD">&#160;Accept&#160;</span> button.</li>
-</ul>
-<ul>
-<li>As many RMAs as lines with quantity greater than zero will be created. Those RMAs will be linked to the sales order.</li>
-</ul>
+<ol>
+<li> <span class="fa fa-th-large" style="color:#7C7BAD"/> Sales &#187; Sales Orders &#187; Orders</li>
+<li> Create a new sales order or select an existing one</li>
+<li> When the sales order is in 'Sales Order' state you can see in the status bar a button labeled <span style="color:white;background-color:#7C7BAD">&#160;Create&#160;RMA&#160;</span>, click it and a wizard will appear</li>
+<li> Modify the data at your convenience and click on <span style="color:white;background-color:#7C7BAD">&#160;Accept&#160;</span> button</li>
+<li> As many RMAs as lines with quantity greater than zero will be created; Those RMAs will be linked to the sales order</li>
+</ol>
 </p>
 </p>
         </div>
@@ -67,21 +106,13 @@ This can be done by creating one or more RMAs from the sales order form view.
             </p>
             <p class="oe_mt16" align="justify">Per creare l'ordine di rientro:
 <p align="justify">
-<ul>
-<li>Men&#249;: *Vendite &gt; Ordini &gt; Ordini*.</li>
-</ul>
-<ul>
-<li>Selezionare un ordine di c/deposito o c/visione</li>
-</ul>
-<ul>
-<li>Se l'ordine &#232; confermato potete vedere il bottoe <span style="color:white;background-color:#7C7BAD">&#160;Creare&#160;RMA&#160;</span>; fare e seguire le istruzioni</li>
-</ul>
-<ul>
-<li>Modificare i dati in modo opportuno e fare click su <span style="color:white;background-color:#7C7BAD">&#160;Accettazione&#160;</span></li>
-</ul>
-<ul>
-<li>Viene creato l'ordine di rientro</li>
-</ul>
+<ol>
+<li> <span class="fa fa-th-large" style="color:#7C7BAD"/> Vendite &#187; Ordini &#187; Ordini</li>
+<li> Selezionare un ordine di c/deposito o c/visione</li>
+<li> Se l'ordine &#232; confermato appare il bottone <span style="color:white;background-color:#7C7BAD">&#160;Creare&#160;RMA&#160;</span>; fare click e seguire le istruzioni</li>
+<li> Modificare i dati in modo opportuno e fare click su <span style="color:white;background-color:#7C7BAD">&#160;Accettazione&#160;</span></li>
+<li> Viene creato l'ordine di rientro</li>
+</ol>
 </p>
 </p>
         </div>
@@ -89,13 +120,11 @@ This can be done by creating one or more RMAs from the sales order form view.
     <div class="oe_row oe_spaced">
         <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
         <div class="oe_span12">
-<h3>12.0.0.1.0 (2023-11-09)</h3>
+<h3>12.0.0.1.0 (2023-11-14)</h3>
 <p align="justify">
 <ul>
 <li>Initial implementation</li>
-</ul>
-<ul>
-<li>[QUA] Test coverage 36% (303: 195+108) [0 TestPoints] - quality rating 65 (target 100)</li>
+<li>[QUA] Test coverage 38% (117: 72+45) [0 TestPoints] - quality rating 28 (target 100)</li>
 </ul>
 </p>
 
@@ -110,9 +139,6 @@ This can be done by creating one or more RMAs from the sales order form view.
         <div class="oe_span6" align="left">
             <p class="oe_mt16">Authors | Autori:</p>
             <p class="oe_mt16"><ul>
-<li><a href="https://www.tecnativa.com/">Tecnativa</a></li>
-</ul>
-<ul>
 <li><a href="https://www.zeroincombenze.it/">SHS-AV s.r.l.</a></li>
 </ul>
 </p>
@@ -120,16 +146,10 @@ This can be done by creating one or more RMAs from the sales order form view.
         <div class="oe_span6" align="left">
             <p class="oe_mt16">Contributors | Contributi da:</p>
             <p class="oe_mt16"><ul>
-<li>Ernesto Tejeda &lt;ernesto.tejeda@tecnativa.com&gt;</li>
-</ul>
-<ul>
-<li>Pedro M. Baeza &lt;pedro.baeza@tecnativa.com&gt;</li>
-</ul>
-<ul>
-<li>David Vidal &lt;david.vidal@tecnativa.com&gt;</li>
-</ul>
-<ul>
-<li>Antonio M. Vigliotti &lt;antoniomaria.vigliotti@gmail.com&gt;</li>
+<li><a href="mailto:ernesto.tejeda@tecnativa.com">Ernesto Tejeda</a></li>
+<li><a href="mailto:pedro.baeza@tecnativa.com">Pedro M. Baeza</a></li>
+<li><a href="mailto:david.vidal@tecnativa.com">David Vidal</a></li>
+<li><a href="mailto:antoniomaria.vigliotti@gmail.com">Antonio M. Vigliotti</a></li>
 </ul>
 </p>
         </div>

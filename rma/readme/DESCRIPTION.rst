@@ -1,5 +1,5 @@
 This module allows you to manage `Return Merchandise Authorization (RMA)
-<https://en.wikipedia.org/wiki/Return_merchandise_authorization>`_.
+<https://en.wikipedia.org/wiki/Return_merchandise_authorization>`__.
 RMA documents can be created from scratch, from a delivery order or from
 an incoming email. Product receptions and returning delivery operations
 of the RMA module are fully integrated with the Receipts and Deliveries
