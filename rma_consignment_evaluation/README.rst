@@ -17,10 +17,23 @@ Overview | Panoramica
 |en| This module allows you to create a RMA from sale order,
 both for return both for sale.
 
+RMA for sale moves product to Customer location and set quantity to invoice on
+sale order lines.
+
+RMA for return moves product to internal stock. Notice this behavior is different from
+standard RMA which move products into specific RMA location.
+
 
 |
 
-|it| Questo modulo permette di creare RMA sia di rinetro che di vendita.
+|it| Questo modulo permette di creare RMA sia per rientro merce che per vendita merce.
+
+La richiesta di RMA per vendita sposta i prodotti nell'ubicazione clienti e attiva le
+quantità da fatturare nelle righe ordine.
+
+Le RMA di reso spostano i prodotti nell'ubica interna si Stock. Notare che questo
+comportamenot differisce dal normale funzionamento delle RMA che spostano i prodotti
+in una specifica ubica interna.
 
 
 
@@ -124,7 +137,7 @@ To configure RMA you need to:
 ☰ Sales > Configuration > Sales Orders Types >
 Create a new sale order type with all the settings you want
 
-The field 'Picking Auto Confirmation' requires module *sale_order_lot_selection*.
+The field **Picking Auto Confirmation** requires module *sale_order_lot_selection*
 
 
 
@@ -217,9 +230,6 @@ Authors | Autori
 Contributors | Contributi da
 ----------------------------
 
-* `Ernesto Tejeda <ernesto.tejeda@tecnativa.com>`__
-* `Pedro M. Baeza <pedro.baeza@tecnativa.com>`__
-* `David Vidal <david.vidal@tecnativa.com>`__
 * `Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>`__
 
 

@@ -29,3 +29,7 @@ class SaleOrderLine(models.Model):
                 ln.qty_to_invoice
                 for ln in self.env["rma"].search(
                     [("sale_line_id", "=", line.id)])])
+
+    @api.multi
+    def compute_qty_delivered(self):
+        return self._compute_qty_delivered()

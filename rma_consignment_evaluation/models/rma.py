@@ -6,16 +6,22 @@ from odoo import api, fields, models
 class Rma(models.Model):
     _inherit = "rma"
 
+    def _compute_qty_to_invoice(self):
+        for rma in self:
+            rma.qty_to_invoice = rma.product_uom_qty if rma.for_sale else 0.0
+
     lot_id = fields.Many2one(
         'stock.production.lot', 'Lot',
     )
     original_order_not_sale = fields.Boolean(
-        related='order_id.type_id.not_sale',
+        related="order_id.type_id.not_sale",
         string="Original order not for sale",
         store=True)
-    qty_to_invoice = fields.Float('Qty to Invoice', readonly=True, default=0.0)
+    qty_to_invoice = fields.Float(
+        "Qty to Invoice",
+        compute=_compute_qty_to_invoice)
     for_sale = fields.Boolean(
-        related='operation_id.for_sale',
+        related="operation_id.for_sale",
         string="RMA operation for sale",
         store=True)
 

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo (12.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-14 07:58+0000\n"
-"PO-Revision-Date: 2023-11-14 07:58+0000\n"
+"POT-Creation-Date: 2023-11-14 08:22+0000\n"
+"PO-Revision-Date: 2023-11-14 08:22+0000\n"
 "Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
 "Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
 "Language: it\n"
@@ -15,21 +15,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#. module: rma_consignment_evaluation
-#: model_terms:ir.ui.view,arch_db:rma_consignment_evaluation.sale_order_rma_wizard_form_view
-msgid "Accept"
-msgstr "Accettare"
-
-#. module: rma_consignment_evaluation
-#: model_terms:ir.ui.view,arch_db:rma_consignment_evaluation.sale_order_rma_wizard_form_view
-msgid "Cancel"
-msgstr "Annulla"
-
-#. module: rma_consignment_evaluation
-#: model:ir.actions.act_window,name:rma_consignment_evaluation.sale_order_create_rma_action
-msgid "Create RMAs"
-msgstr "Creare RMA"
 
 #. module: rma_consignment_evaluation
 #: code:addons/rma_consignment_evaluation/wizard/sale_order_rma_wizard.py:49
