@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <record id="sale_order_create_rma_action" model="ir.actions.act_window">
         <field name="name">Create RMAs</field>
         <field name="res_model">sale.order.rma.wizard</field>
@@ -50,4 +51,5 @@
             </form>
         </field>
     </record>
+    
 </odoo>

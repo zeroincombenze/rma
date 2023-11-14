@@ -13,7 +13,7 @@
             <p align="center">
                 <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
             </p>
-            <h2 class="oe_slogan" style="color:#162832;">Sommario non disponibile
+            <h2 class="oe_slogan" style="color:#162832;">Gestione RMA (Reso Merce Autorizzato) da ordine di vendita
 </h2>
         </div>
         <div class="oe_span6">
@@ -31,10 +31,12 @@ order web portal page.
             <p align="center">
                 <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
             </p>
-            <p class="oe_mt16" align="justify">Nessuna informazione disponibile
+            <p class="oe_mt16" align="justify">Questo modulo permette di gestire le RMA (Reso Merce Autorizzato) e collegarle
+agli ordini di vendita.
 </p>
         </div>
-        
+        <img src="/rma_sale/static/description/description.png" alt="Return Merchandise Authorization Management - Link with Sales" style="width:98%;max-width:1140px"/>
+
     </div>
     <div class="oe_row oe_spaced">
         <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
@@ -46,22 +48,19 @@ order web portal page.
             <p class="oe_mt16" align="justify">To use this module, you need to:
 <p align="justify">
 <ol>
-<li> Go to *RMA &gt; Orders* and create a new RMA.</li>
-<li> Select a sales order to be linked to the RMA if you want.</li>
-<li> Now you can do the rest of the instructions described in the
-   <i>readme</i> of the rma module.</li>
+<li> <span class="fa fa-th-large" style="color:#7C7BAD"/> RMA &#187; Orders &#187; <span style="color:white;background-color:#7C7BAD">&#160;Create&#160;</span> a new RMA</li>
+<li> Select a sales order to be linked to the RMA if you want</li>
+<li> Now you can do the rest of the instructions described in the <i>readme</i> of the rma module</li>
 </ol>
 </p><p align="justify">
 If you want to create one or more RMAs from a sale order:
 </p><p align="justify">
 <ol>
-<li> Go to *Sales &gt; Orders &gt; Orders*.</li>
-<li> Create a new sales order or select an existing one.</li>
-<li> If the sales order is in 'Sales Order' state you can see in the status bar
-   a button labeled 'Create RMA', click it and a wizard will appear.</li>
-<li> Modify the data at your convenience and click on 'Accept' button.</li>
-<li> As many RMAs as lines with quantity greater than zero will be created.
-   Those RMAs will be linked to the sales order.</li>
+<li> <span class="fa fa-th-large" style="color:#7C7BAD"/> Sales &#187; Orders &#187; Orders</li>
+<li> Create a new sales order or select an existing one</li>
+<li> If the sales order is in 'Sales Order' state you can see on the status bar the button <span style="color:white;background-color:#7C7BAD">&#160;Create&#160;RMA&#160;</span>, click it and a wizard will appear</li>
+<li> Modify the data at your convenience and click on <span style="color:white;background-color:#7C7BAD">&#160;Accept&#160;</span> button</li>
+<li> As many RMAs as lines with quantity greater than zero will be created. Those RMAs will be linked to the sales order.</li>
 </ol>
 </p><p align="justify">
 The customer can also create RMAs from a sales order portal page:
@@ -69,10 +68,8 @@ The customer can also create RMAs from a sales order portal page:
 <ol>
 <li> Go to a confirmed sales order portal page.</li>
 <li> In the left sidebar you can see a button named 'Request RMAs'.</li>
-<li> By clicking on this button a popup will appear to allow you to define
-   the quantity per product and delivery order line.</li>
-<li> Click on the 'Request RMAs' button and RMAs will be created linked to
-   the sales order.</li>
+<li> By clicking on this button a popup will appear to allow you to define the quantity per product and delivery order line.</li>
+<li> Click on the <span style="color:white;background-color:#7C7BAD">&#160;Request&#160;RMAs&#160;</span> button and RMAs will be created linked to the sales order.</li>
 </ol>
 </p>
 </p>
@@ -81,18 +78,47 @@ The customer can also create RMAs from a sales order portal page:
             <p align="center">
                 <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
             </p>
-            <p class="oe_mt16" align="justify"/>
+            <p class="oe_mt16" align="justify">Per usare questo modulo:
+<p align="justify">
+<ol>
+<li> <span class="fa fa-th-large" style="color:#7C7BAD"/> RMA &#187; Ordini &#187; <span style="color:white;background-color:#7C7BAD">&#160;Creare&#160;</span> una nuova richiesta RMA</li>
+<li> Selezionare un ordine di vendita a cui collegare la richiesta RMA</li>
+<li> Seguire le istruzioni</li>
+</ol>
+</p><p align="justify">
+Si pu&#242; creare uno o pi&#249; RMA da ordine:
+</p><p align="justify">
+<ol>
+<li> <span class="fa fa-th-large" style="color:#7C7BAD"/> Vendite &#187; Ordini &#187; Ordini</li>
+<li> Creare un nuovo ordine o selezionarne uno gi&#224; presente</li>
+<li> Se l'ordine &#232; in stato 'Confermato' potete vedere il bottone <span style="color:white;background-color:#7C7BAD">&#160;Creare&#160;RMA&#160;</span>, fare click per aprire la richiesta</li>
+<li> Inserire o modificare i dati e fare click su bottone <span style="color:white;background-color:#7C7BAD">&#160;Accettare&#160;</span></li>
+<li> Per ogni riga maggiore di zero sar&#224; creata una richiesta RMA</li>
+</ol>
+</p>
+</p>
         </div>
     </div>
     <div class="oe_row oe_spaced">
         <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
         <div class="oe_span12">
-<h3>12.0.0.1.0 (2018-10-04)</h3>
+<h4>12.0.0.1.0 (2018-10-04)</h4>
 <p align="justify">
 <ul>
 <li>Initial implementation</li>
 </ul>
 </p>
+
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Known issues | Problemi conosciuti</h3>
+        <div class="oe_span12">
+When you try to request an RMA from a Sales Order in the portal,
+a popup appears and the inputs for the quantity doesn't allow
+decimal numbers. It would be good to have a component that allows
+that and at the same time keeps the constraint of not allowing a
+number greater than the order line product quantity.
 
         </div>
     </div>
@@ -113,9 +139,9 @@ The customer can also create RMAs from a sales order portal page:
         <div class="oe_span6" align="left">
             <p class="oe_mt16">Contributors | Contributi da:</p>
             <p class="oe_mt16"><ul>
-<li>Ernesto Tejeda &lt;False&gt;</li>
-<li>Pedro M. Baeza &lt;False&gt;</li>
-<li>David Vidal &lt;False&gt;</li>
+<li><a href="mailto:ernesto.tejeda@tecnativa.com">Ernesto Tejeda</a></li>
+<li><a href="mailto:pedro.baeza@tecnativa.com">Pedro M. Baeza</a></li>
+<li><a href="mailto:david.vidal@tecnativa.com">David Vidal</a></li>
 </ul>
 </p>
         </div>

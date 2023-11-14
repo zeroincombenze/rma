@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo (12.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 16:25+0000\n"
-"PO-Revision-Date: 2023-10-12 18:35+0200\n"
+"PO-Revision-Date: 2023-11-14 07:12+0100\n"
 "Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
 "Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
 "Language: it\n"
@@ -27,13 +27,13 @@ msgstr " (Portale)"
 #: code:addons/rma_sale/wizard/sale_order_rma_wizard.py:55
 #, python-format
 msgid " has been created."
-msgstr " has been creato."
+msgstr " è stato creato."
 
 #. module: rma_sale
 #: code:addons/rma_sale/wizard/sale_order_rma_wizard.py:57
 #, python-format
 msgid " have been created."
-msgstr " have been creato."
+msgstr " sono stati creati."
 
 #. module: rma_sale
 #: model_terms:ir.ui.view,arch_db:rma_sale.sale_rma_request_form
@@ -228,7 +228,7 @@ msgstr ""
 #. module: rma_sale
 #: model_terms:ir.ui.view,arch_db:rma_sale.sale_rma_request_form
 msgid "If no requested operation is set, the RMA won't be correctly fulfilled"
-msgstr ""
+msgstr "Se nessuna operazione è impostata, la RMA non può essere soddisfatta"
 
 #. module: rma_sale
 #: model:ir.model.fields,field_description:rma_sale.field_sale_order_line_rma_wizard____last_update
@@ -389,12 +389,12 @@ msgstr "Unità di misura"
 #. module: rma_sale
 #: model_terms:ir.ui.view,arch_db:rma_sale.sale_rma_request_form
 msgid "Use the comment button to add relevant information regarding the RMA, like returned serial numbers or a description of the issue"
-msgstr ""
+msgstr "Usare il campo note per aggiungere informazioni rilevanti il RMA come numero di serie o motivo del rientro"
 
 #. module: rma_sale
 #: model:ir.model.fields,help:rma_sale.field_sale_order_rma_wizard__custom_description
 msgid "Values coming from portal RMA request form custom fields"
-msgstr " coming from portal RMA request albero custom campi"
+msgstr "Valori provenienti dal modulo di richiesta portale RMA"
 
 #. module: rma_sale
 #: model_terms:ir.ui.view,arch_db:rma_sale.res_config_settings_view_form
@@ -419,7 +419,7 @@ msgstr "Si può rendere al massimo le quantità gestite per questo ordine"
 #. module: rma_sale
 #: model_terms:ir.ui.view,arch_db:rma_sale.sale_rma_request_form
 msgid "You can send a message in every RMA sent"
-msgstr ""
+msgstr "Si può inviare un messaggio per ogni RMA spedito"
 
 #. module: rma_sale
 #: code:addons/rma_sale/models/sale.py:44

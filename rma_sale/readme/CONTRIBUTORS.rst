@@ -1,3 +1,3 @@
-* Ernesto Tejeda <False>
-* Pedro M. Baeza <False>
-* David Vidal <False>
+* Ernesto Tejeda <ernesto.tejeda@tecnativa.com>
+* Pedro M. Baeza <pedro.baeza@tecnativa.com>
+* David Vidal <david.vidal@tecnativa.com>

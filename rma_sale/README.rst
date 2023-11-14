@@ -1,6 +1,6 @@
-========================================================================================
-|icon| Return Merchandise Authorization Management - Link with Sales/rma_sale 12.0.1.8.0
-========================================================================================
+==============================================================================================
+|icon| Return Merchandise Authorization Management - Link with Sales/RMA da vendita 12.0.1.8.0
+==============================================================================================
 
 **Sale Order - Return Merchandise Authorization (RMA)**
 
@@ -22,7 +22,9 @@ order web portal page.
 
 |
 
-|it| Nessuna informazione disponibile
+|it| Questo modulo permette di gestire le RMA (Reso Merce Autorizzato) e collegarle
+agli ordini di vendita.
+
 
 
 |
@@ -32,29 +34,24 @@ Usage | Utilizzo
 
 To use this module, you need to:
 
-#. Go to *RMA > Orders* and create a new RMA.
-#. Select a sales order to be linked to the RMA if you want.
-#. Now you can do the rest of the instructions described in the
-   *readme* of the rma module.
+#. ☰ RMA > Orders > [Create] a new RMA
+#. Select a sales order to be linked to the RMA if you want
+#. Now you can do the rest of the instructions described in the *readme* of the rma module
 
 If you want to create one or more RMAs from a sale order:
 
-#. Go to *Sales > Orders > Orders*.
-#. Create a new sales order or select an existing one.
-#. If the sales order is in 'Sales Order' state you can see in the status bar
-   a button labeled 'Create RMA', click it and a wizard will appear.
-#. Modify the data at your convenience and click on 'Accept' button.
-#. As many RMAs as lines with quantity greater than zero will be created.
-   Those RMAs will be linked to the sales order.
+#. ☰ Sales > Orders > Orders
+#. Create a new sales order or select an existing one
+#. If the sales order is in 'Sales Order' state you can see on the status bar the button [Create RMA], click it and a wizard will appear
+#. Modify the data at your convenience and click on [Accept] button
+#. As many RMAs as lines with quantity greater than zero will be created. Those RMAs will be linked to the sales order.
 
 The customer can also create RMAs from a sales order portal page:
 
 #. Go to a confirmed sales order portal page.
 #. In the left sidebar you can see a button named 'Request RMAs'.
-#. By clicking on this button a popup will appear to allow you to define
-   the quantity per product and delivery order line.
-#. Click on the 'Request RMAs' button and RMAs will be created linked to
-   the sales order.
+#. By clicking on this button a popup will appear to allow you to define the quantity per product and delivery order line.
+#. Click on the [Request RMAs] button and RMAs will be created linked to the sales order.
 
 
 
@@ -167,6 +164,17 @@ In case of trouble, please check there if your issue has already been reported.
 
 
 
+Known issues | Roadmap
+----------------------
+
+When you try to request an RMA from a Sales Order in the portal,
+a popup appears and the inputs for the quantity doesn't allow
+decimal numbers. It would be good to have a component that allows
+that and at the same time keeps the constraint of not allowing a
+number greater than the order line product quantity.
+
+
+
 Proposals for enhancement
 -------------------------
 
@@ -207,10 +215,9 @@ Authors | Autori
 Contributors | Contributi da
 ----------------------------
 
-* `Tecnativa <https://www.tecnativa.com>`__
-* * Ernesto Tejeda <False>
-* * Pedro M. Baeza <False>
-* * David Vidal <False>
+* `Ernesto Tejeda <ernesto.tejeda@tecnativa.com>`__
+* `Pedro M. Baeza <pedro.baeza@tecnativa.com>`__
+* `David Vidal <david.vidal@tecnativa.com>`__
 
 
 
